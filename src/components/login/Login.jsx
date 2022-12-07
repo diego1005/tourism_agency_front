@@ -11,7 +11,9 @@ export default function Login() {
 
     return (
         <div className='login-container'>
-            <div className="login-icon"></div>
+            <div className="login-icon">
+                <i className="fa-regular fa-user"></i>
+            </div>
             <UserForm
                 name='login'
                 fields={loginFormFields}

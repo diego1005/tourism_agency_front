@@ -1,13 +1,42 @@
 .form {
+    width: 66%;
+    height: 55%;
+    background-color: rgba(218, 206, 213, 0.9);
+    padding: 2.5rem 0 0;
+    border-radius: 35px;
+    box-shadow: 0px 10px 5px rgba(150, 150, 150, 0.7);
+}
+
+.form-content {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    width: 70%;
-    height: 50%;
-    background-color: #daced5;
-    padding: 1rem;
+    height: 100%;
+}
+
+.form-btn {
+    position: relative;
+    bottom: 1rem;
+    z-index: -1;
+    width: 80%;
+    height: 22%;
+    background-color: rgba(218, 206, 213, 0.8);
+    padding-top: 1.9rem;
     border-radius: 35px;
+    margin: 0 auto;
+}
+
+.btn-ctr {
+    text-align: center;
+}
+
+.btn-ctr input{
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    background-color: transparent;
 }
 
 .form-ctr {
@@ -43,4 +72,31 @@
     background-color: #01264e;
     color: white;
     padding: 0.8rem;
+}
+
+.remember-forgot-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+}
+
+.remember {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 1rem;
+    width: 40%;
+    color: #7e8da9;
+}
+
+.remember input {
+    width: 15px;
+    height: 15px;
+}
+
+.forgot a {
+    color: #7e8da9;
+    font-style: italic;
+    text-decoration: none;
 }
