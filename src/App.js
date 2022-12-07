@@ -1,8 +1,15 @@
-import './App.css';
+import Home from './pages/home/Home';
+import { AppContext } from './context/context';
+import { useAuth } from './hooks/useAuth';
 
 function App() {
+
+  const { userLogged, userIsLogged } = useAuth();
+
   return (
-    <div></div>
+    <AppContext.Provider value={{ userLogged, userIsLogged }}>
+      <Home />
+    </AppContext.Provider>
   );
 }
 
