@@ -1,6 +1,7 @@
 import { useContext, useEffect } from 'react';
 import { AppContext } from '../../context/context';
-
+import './Home.css';
+import Login from '../../components/login/Login';
 
 export default function Home() {
 
@@ -16,7 +17,7 @@ export default function Home() {
         <div>
             {
                 !userLogged &&
-                <h1>Hello World</h1>
+                <Login />
             }
         </div>
     )
