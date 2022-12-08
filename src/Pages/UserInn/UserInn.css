@@ -1,0 +1,29 @@
+.userinn {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.userinn-icon {
+    font-size: 2.5rem;
+    border-radius: 50%;
+    padding: 1rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 70%;
+    height: 60%;
+}
+
+.form-ctr {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}

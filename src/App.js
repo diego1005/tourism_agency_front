@@ -1,31 +1,19 @@
-import { useEffect } from 'react';
-import { ViewContext } from './context/context';
-import Home from './pages/home/Home';
-import Login from './components/login/Login';
-import { useAuth } from './hooks/useAuth';
-import { useHandlerView } from './hooks/useHandlerView';
+import React from "react";
+import './App.css';
+import Home from "./Pages/Home/Home";
+import { AppContext } from "./Context/context";
+import { useAuthorization } from "./Hooks/AuthHooks/useAuthorization";
 
 function App() {
 
-  const { view, setView } = useHandlerView();
-  const { userLogged, userIsLogged } = useAuth();
-
-  useEffect(() => {
-    console.log('%cComponent App is mount', 'color: green');
-    userIsLogged();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const { userLogged, userIsLogged } = useAuthorization()
 
   return (
-    <ViewContext.Provider value={{ view, setView }}>
-      <div>
-        {
-          !userLogged
-            ? <Login />
-            : <Home user={userLogged} />
-        }
-      </div>
-    </ViewContext.Provider>
+    <div >
+      <AppContext.Provider value={{ userLogged, userIsLogged }}>
+        <Home />
+      </AppContext.Provider>
+    </div >
   );
 }
 

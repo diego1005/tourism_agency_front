@@ -1,0 +1,27 @@
+.table_row:hover {
+    background-color: rgba(100, 100, 100, 0.3)
+}
+
+.fa-dollar-sign {
+    color: green;
+}
+
+.income-line {
+    color: blue;
+}
+
+.expense-line {
+    color: red;
+}
+
+.opt_income {
+    color: green;
+}
+
+.opt_expense {
+    color: red;
+}
+
+.fa-trash {
+    color: red;
+}

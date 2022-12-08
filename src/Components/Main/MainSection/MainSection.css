@@ -1,0 +1,16 @@
+.main-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.main-section-container {
+    display: flex;
+    justify-content: space-evenly;
+    height: 20rem;
+}
+
+.main-section-title {
+    text-align: start;
+    padding-left: 4.5rem;
+}
