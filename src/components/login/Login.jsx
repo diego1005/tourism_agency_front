@@ -1,6 +1,6 @@
 import './Login.css';
 import UserForm from '../userForms/UserForm';
-import { loginFormFields } from '../../common/formFields/formFields';
+import { loginFormFields } from '../../common/form/formFields';
 
 export default function Login() {
 

@@ -1,5 +1,6 @@
 .form {
     width: 66%;
+    max-width: 360px;
     height: 55%;
     background-color: rgba(218, 206, 213, 0.9);
     padding: 2.5rem 0 0;
@@ -28,6 +29,7 @@
 }
 
 .btn-ctr {
+    max-width: 288px;
     text-align: center;
 }
 
