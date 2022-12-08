@@ -1,16 +1,17 @@
-import { useContext } from 'react'
+import { useState } from 'react'
 // import { displayView } from '../common/views/displayView'
-import { ViewContext } from '../context/context'
 
 export const useHandlerView = () => {
 
-    const { setView } = useContext(ViewContext);
+    const [view, setView] = useState();
 
-    const handlerView = (view) => {
-        setView(view)
-    }   
+    const handlerView = (newView) => {
+        setView(newView)
+    }
 
     return {
+        view,
+        setView,
         handlerView,
     }
 

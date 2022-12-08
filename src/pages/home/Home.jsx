@@ -1,12 +1,12 @@
-import { useState, useEffect } from 'react';
-import { ViewContext } from '../../context/context';
+import { useContext, useEffect } from 'react';
 import './Home.css';
 import Main from '../../components/main/Main';
 import Profile from '../../components/profile/Profile'
+import { ViewContext } from '../../context/context';
 
 export default function Home({ user }) {
 
-    const [view, setView] = useState();
+    const { view } = useContext(ViewContext);
 
     useEffect(() => {
         console.log('%cComponent Home is mount', 'color: green');
@@ -21,13 +21,11 @@ export default function Home({ user }) {
     }
 
     return (
-        <ViewContext.Provider value={{ setView }}>
-            <div>
-                {
-                    switchComponents
-                }
-            </div>
-        </ViewContext.Provider>
+        <div>
+            {
+                switchComponents
+            }
+        </div>
     )
 }
 

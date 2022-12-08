@@ -1,12 +1,17 @@
+import { useContext } from 'react'
 import "./UserForm.css";
 import FormField from "./FormField";
 import FormButton from "./FormButton";
 import Remember from "./Remember";
 import Forgot from "./Forgot";
+import { UserContext } from '../../context/context';
 
 export default function UserForm({ name, fields, button }) {
+
+    const { inputData, submitHandler } = useContext(UserContext);
+
     return (
-        <form className="form" name={name}>
+        <form className="form" name={name} onSubmit={e => submitHandler(e, inputData)}>
             <div className="form-content">
                 <div className="form-ctr">
                     {fields.map((el, idx) => (

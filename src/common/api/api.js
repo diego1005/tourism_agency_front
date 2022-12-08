@@ -4,6 +4,7 @@ export const getByApi = (entity, fn, params) => {
     let fullUrl = '';
     if (fn) fullUrl = params ? `${url + entity}/${fn}/${params}` : `${url + entity}/${fn}`;
     else fullUrl = `${url + entity}`
+    console.log(fullUrl);
     return fetch(fullUrl, {
         headers: { "authorization": localStorage.getItem("token") }
     })
