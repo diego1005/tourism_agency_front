@@ -1,4 +1,3 @@
-import React from 'react';
 import { RegisterBox, LoginBox } from '../../Components/UserInn';
 import { UserContext } from '../../Context/context';
 import { useInputHandler } from '../../Hooks/FormHooks/useInputHandler';

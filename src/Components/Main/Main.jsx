@@ -1,4 +1,3 @@
-import React from 'react';
 import "./Main.css";
 import TopSection from "../Main/TopSection/TopSection";
 import MainSection from "../Main/MainSection/MainSection";

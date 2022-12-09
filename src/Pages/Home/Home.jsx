@@ -41,9 +41,12 @@ function Home() {
                 <div className="container">
                     <Header />
                     {
+                        switchComponent()
+                        /*
                         userLogged === null
                             ? <UserInn />
                             : <>{switchComponent()}</>
+                        */
                     }
                     <Footer />
                 </div>

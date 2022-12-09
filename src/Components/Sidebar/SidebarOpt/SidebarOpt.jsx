@@ -1,4 +1,3 @@
-import React from 'react';
 import { useHandleView } from '../../../Hooks/ViewHooks/useHandleView';
 import "./SidebarOpt.css"
 

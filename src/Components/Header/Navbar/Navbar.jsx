@@ -1,4 +1,3 @@
-import React from 'react';
 import "./Navbar.css";
 import SearchBar from "./SearchBar/SearchBar";
 import Navicon from "./Navicon/Navicon";

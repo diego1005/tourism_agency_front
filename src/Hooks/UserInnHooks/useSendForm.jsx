@@ -1,5 +1,5 @@
 import { useHandleView } from '../ViewHooks/useHandleView';
-import { sendReg, sendLog } from '../../Services/User/forUsers';
+import { addUser, login } from '../../Services/User/userServices';
 
 export const useSendForm = () => {
 
@@ -11,7 +11,7 @@ export const useSendForm = () => {
         for (let key in data) {
             formData.append(key, data[key])
         }
-        const response = await sendReg(formData);
+        const response = await addUser(formData);
         if (response.token) {
             localStorage.setItem("token", response.token);
             handleView("dashboard");
@@ -19,7 +19,7 @@ export const useSendForm = () => {
     }
 
     const loginForm = async (data) => {
-        const response = await sendLog(data);
+        const response = await login(data);
         if (response.token) {
             localStorage.setItem("token", response.token);
             handleView("dashboard");
