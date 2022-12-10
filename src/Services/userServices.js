@@ -1,4 +1,4 @@
-import { getByApi, sendByApi } from '../../common/api/api';
+import { getByApi, sendByApi } from '../Common/Api/api';
 //SEND
 export const addUser = async (body) => {
     const data = await sendByApi("user", "add", undefined, "POST", body);

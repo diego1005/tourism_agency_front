@@ -1,6 +1,5 @@
-import React from "react";
 import './App.css';
-import Home from "./Pages/Home/Home";
+import Home from './Pages/Home';
 import { AppContext } from "./Context/context";
 import { useAuthorization } from "./Hooks/AuthHooks/useAuthorization";
 
