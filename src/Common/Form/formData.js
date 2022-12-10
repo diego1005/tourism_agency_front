@@ -42,6 +42,16 @@ export const formImg = {
 
 //LOGIN DATA FORM
 
+export const loginFormInfo = {
+    loginFormClass: "login-form",
+}
+
+export const loginFormButton = {
+    classBtnContainer: "btn-login-container",
+    btnClass: "btn-login",
+    value: "Iniciar Sesion",
+}
+
 export const loginFormFields = [
     {
         icon: <i className="fa-solid fa-envelope"></i>,

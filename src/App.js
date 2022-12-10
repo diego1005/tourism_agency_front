@@ -1,5 +1,5 @@
 import './App.css';
-import Home from './Pages/Home';
+import Home from './Pages/Home/Home';
 import { AppContext } from "./Context/context";
 import { useAuthorization } from "./Hooks/AuthHooks/useAuthorization";
 

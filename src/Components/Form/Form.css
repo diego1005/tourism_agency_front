@@ -1,0 +1,33 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.form-field {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-field-icon {
+    margin: 0 1rem;
+}
+
+.form-field-input {
+    font-size: 1.2rem;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.btn-input {
+    font-size: 1.3rem;
+    padding: 1rem;
+    border: none;
+}
