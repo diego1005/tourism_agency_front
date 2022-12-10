@@ -1,13 +1,13 @@
 import { useContext } from "react";
 import { AppContext } from "../../Context/context";
-import { logoutUser } from "../../Services/User/getUsers";
+import { logout } from '../../Services/userServices';
 
 export const useLogout = () => {
 
     const { userIsLogged } = useContext(AppContext);
 
-    const logout = async () => {
-        const status = await logoutUser();
+    const logoutUser = async () => {
+        const status = await logout();
         if (status === "success") {
             localStorage.clear();
             userIsLogged();
@@ -15,6 +15,6 @@ export const useLogout = () => {
     }
 
     return {
-        logout,
+        logoutUser,
     }
 }

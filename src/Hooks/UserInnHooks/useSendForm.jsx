@@ -1,33 +1,33 @@
 import { useHandleView } from '../ViewHooks/useHandleView';
-import { sendReg, sendLog } from '../../Services/User/forUsers';
+import { addUser, login } from '../../Services/userServices';
 
 export const useSendForm = () => {
 
     const { handleView } = useHandleView();
 
-    const registerForm = async (data, file) => {
+    const registerHandler = async (data) => {
         let formData = new FormData();
-        formData.append("url_img", file.current.files[0]);
+        // formData.append("url_img", file.current.files[0]);
         for (let key in data) {
             formData.append(key, data[key])
         }
-        const response = await sendReg(formData);
+        const response = await addUser(formData);
         if (response.token) {
             localStorage.setItem("token", response.token);
-            handleView("dashboard");
+            handleView("main");
         }
     }
 
-    const loginForm = async (data) => {
-        const response = await sendLog(data);
+    const loginHandler = async (data) => {
+        const response = await login(data);
         if (response.token) {
             localStorage.setItem("token", response.token);
-            handleView("dashboard");
+            handleView("main");
         }
     }
 
     return {
-        loginForm,
-        registerForm,
+        loginHandler,
+        registerHandler,
     }
 }

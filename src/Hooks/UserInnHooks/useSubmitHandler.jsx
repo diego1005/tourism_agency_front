@@ -2,17 +2,17 @@ import { useSendForm } from "./useSendForm";
 
 export const useSubmitHandler = () => {
 
-    const { loginForm, registerForm } = useSendForm();
+    const { loginHandler, registerHandler } = useSendForm();
 
     //Fn for handle submit form action
-    const submitHandler = (e, dataForm, file = null) => {
+    const submitHandler = (e, data) => {
         //Prevent default behaviour
         e.preventDefault();
 
         const { name } = e.target;
 
-        if (name === "register") registerForm(dataForm, file);
-        if (name === "login") loginForm(dataForm);
+        if (name === "register") registerHandler(data);
+        if (name === "login") loginHandler(data);
     }
 
     return {
