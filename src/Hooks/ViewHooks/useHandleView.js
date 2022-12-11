@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { displayView } from "../../Common/Views/displayView";
+// import { displayView } from "../../Common/Views/displayView";
 import { AppContext, ViewContext } from "../../Context/context"
 
 export const useHandleView = () => {
@@ -12,7 +12,8 @@ export const useHandleView = () => {
             userIsLogged()
         } else {
             // view = (view === "LOG IN" || view === "SIGN IN") ? "userinn" : view;
-            setView(displayView(userLogged, view));
+            // setView(displayView(userLogged, view));
+            setView(view);
         }
     }
 

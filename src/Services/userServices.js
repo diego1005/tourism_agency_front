@@ -21,6 +21,11 @@ export const getById = async (id) => {
     return data;
 }
 
+export const checkToken = async () => {
+    const data = await getByApi("auth", "checkToken");
+    return data;
+}
+
 //LOGOUT
 export const logout = async () => {
     const { status } = await getByApi("auth", "logout");

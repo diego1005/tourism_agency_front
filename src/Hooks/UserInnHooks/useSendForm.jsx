@@ -14,7 +14,7 @@ export const useSendForm = () => {
         const response = await addUser(formData);
         if (response.token) {
             localStorage.setItem("token", response.token);
-            handleView("main");
+            handleView("dashboard");
         }
     }
 
@@ -22,7 +22,7 @@ export const useSendForm = () => {
         const response = await login(data);
         if (response.token) {
             localStorage.setItem("token", response.token);
-            handleView("main");
+            handleView("dashboard");
         }
     }
 

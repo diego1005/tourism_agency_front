@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { getById } from '../../Services/userServices';
+import { checkToken } from '../../Services/userServices';
 
 export const useAuthorization = () => {
 
@@ -11,7 +11,7 @@ export const useAuthorization = () => {
     // If it is
     if (tokenInStorage) {
       // Check if it is valid token
-      const data = await getById();
+      const data = await checkToken();
       (data.token) ? setUserLogged(data.token) : localStorage.clear();
     } else {
       setUserLogged(null);
