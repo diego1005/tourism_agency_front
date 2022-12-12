@@ -7,7 +7,9 @@ export const useHandleView = () => {
     const { userLogged, userIsLogged } = useContext(AppContext);
     const { setView } = useContext(ViewContext);
 
-    const handleView = (view) => {
+    const handleView = (e = null, view) => {
+        if (e) e.preventDefault();
+
         if (!userLogged) {
             userIsLogged()
         } else {
