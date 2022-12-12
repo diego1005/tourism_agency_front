@@ -9,8 +9,9 @@
 .menu-title {
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
     font-size: 1.1rem;
-    width: 60%;
+    width: 80%;
     padding: 0.4rem;
     background-color: white;
     border: 1px solid black;
@@ -20,7 +21,7 @@
     position: absolute;
     z-index: -1;
     list-style: none;
-    padding: 2.7rem 2.4rem 1rem;
+    padding: 2.7rem 3rem 1rem;
     border: 1px solid black;
 }
 

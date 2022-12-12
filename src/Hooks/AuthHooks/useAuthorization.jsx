@@ -12,7 +12,7 @@ export const useAuthorization = () => {
     if (tokenInStorage) {
       // Check if it is valid token
       const data = await checkToken();
-      (data.token) ? setUserLogged(data.token) : localStorage.clear();
+      (data.token) ? setUserLogged(data.user, data.token) : localStorage.clear();
     } else {
       setUserLogged(null);
     }
