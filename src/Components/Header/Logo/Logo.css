@@ -1,5 +1,16 @@
 .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 20%;
     height: 100%;
     border: 1px solid black;
+}
+
+.logo i, .logo em{
+    font-size: 2rem;
+}
+
+.logo em {
+    font-family: comic;
 }

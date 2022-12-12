@@ -3,7 +3,7 @@ import './Logo.css'
 export default function Logo() {
   return (
     <div className='logo'>
-        Logo
+        <i className="fa-solid fa-bus"><em> Viajes</em></i>
     </div>
   )
 }
