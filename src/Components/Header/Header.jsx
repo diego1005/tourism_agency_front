@@ -1,12 +1,12 @@
 import './Header.css'
 import Logo from './Logo/Logo'
-import UserNav from './UserNav/UserNav'
+import Panel from './Panel/Panel'
 
 export default function Header() {
   return (
     <div className='header'>
       <Logo/>
-      <UserNav/>
+      <Panel/>
     </div>
   )
 }

@@ -1,0 +1,35 @@
+.menu-container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    width: 90%;
+}
+
+.menu-title {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 1.1rem;
+    width: 60%;
+    padding: 0.4rem;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.menu {
+    position: absolute;
+    z-index: -1;
+    list-style: none;
+    padding: 2.7rem 2.4rem 1rem;
+    border: 1px solid black;
+}
+
+.menu li {
+    margin-top: 0.5rem;
+}
+
+.menu-btn {
+    font-size: 1.1rem;
+    background-color: transparent;
+    border: none;
+}
