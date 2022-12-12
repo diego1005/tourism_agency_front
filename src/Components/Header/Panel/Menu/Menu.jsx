@@ -1,29 +1,18 @@
 import { useState } from 'react';
 import './Menu.css';
+import MenuList from './MenuList';
+import MenuTitle from './MenuTitle';
 
-export default function UserMenu({ name = "usuario" }) {
+export default function UserMenu() {
 
     const [userMenu, setUserMenu] = useState(false);
 
     return (
         <div className='menu-container'>
-            {/*the next button and ul can be a component to be reused in another site*/}
-            <button className="menu-title" onClick={() => setUserMenu(preValue => !preValue)}>
-                <p>
-                    <em>Hola </em><b>{name}</b><em> !</em>
-                </p>
-                <i className="fa-solid fa-angle-down"></i>
-            </button>
+            <MenuTitle title={"usuario"} userMenu={setUserMenu} />
             {
                 userMenu &&
-                <ul className='menu'>
-                    <li>
-                        <button className='menu-btn'>Mi Perfil</button>
-                    </li>
-                    <li>
-                        <button className='menu-btn'>Cerrar Sesion</button>
-                    </li>
-                </ul>
+                <MenuList/>
             }
         </div>
     )

@@ -6,3 +6,7 @@
     height: 100%;
     border: 1px solid black;
 }
+
+.panel i {
+    font-size: 1.5rem;
+}
