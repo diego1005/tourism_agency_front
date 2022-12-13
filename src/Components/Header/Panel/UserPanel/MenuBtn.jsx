@@ -9,7 +9,7 @@ export default function MenuBtn({ title, newView }) {
     return (
         <li>
             <button
-                className='menu-btn'
+                className={'menu-btn'}
                 onClick={() =>
                     title === "Cerrar Sesion"
                         ? logoutUser()

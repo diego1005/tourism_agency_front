@@ -12,11 +12,12 @@ export default function SidebarMenu() {
         <div className='sidebar-menu'>
             {
                 userLogged
-                ? sidebarOptions.map(({ icon, option }, idx) =>
+                ? sidebarOptions.map(({ icon, option, subOptions }, idx) =>
                     <SidebarOpt
                         key={idx}
                         icon={icon}
                         opt={option}
+                        subOpt={subOptions}
                     />
                 )
                 : <i className="fa-solid fa-right-to-bracket">

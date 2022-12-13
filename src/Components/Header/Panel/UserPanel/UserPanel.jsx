@@ -1,10 +1,12 @@
 import { useState, useContext } from 'react';
 import { AppContext } from '../../../../Context/context';
-import './Menu.css';
+import './UserPanel.css';
 import MenuList from './MenuList';
 import MenuTitle from './MenuTitle';
+import { userMenuList } from '../../../../Common/UserMenu/userMenuList';
 
-export default function UserMenu() {
+
+export default function UserPanel() {
 
     const [userMenu, setUserMenu] = useState(false);
     const { userLogged } = useContext(AppContext);
@@ -16,7 +18,7 @@ export default function UserMenu() {
             <MenuTitle title={`${name} ${lastname}`} userMenu={setUserMenu} />
             {
                 userMenu &&
-                <MenuList />
+                <MenuList list={userMenuList} />
             }
         </div>
     )

@@ -1,6 +1,6 @@
 
 import { useContext } from 'react'
-import Menu from './Menu/Menu'
+import UserPanel from './UserPanel/UserPanel'
 import './Panel.css'
 import { AppContext } from '../../../Context/context'
 
@@ -12,7 +12,7 @@ export default function UserNav() {
     <div className='panel'>
       {
         userLogged
-          ? <Menu />
+          ? <UserPanel />
           : <i className="fa-solid fa-user-slash"></i>
       }
     </div>
