@@ -13,9 +13,14 @@ export default function UserPanel() {
 
     const { name, lastname } = userLogged;
 
+    const handleShow = ({ type }) => {
+        if (type === "mouseover") setUserMenu(true);
+        if (type === "mouseout") setUserMenu(false);
+    }
+
     return (
-        <div className='menu-container'>
-            <MenuTitle title={`${name} ${lastname}`} userMenu={setUserMenu} />
+        <div className='menu-container' onMouseOver={handleShow} onMouseOut={handleShow} >
+            <MenuTitle title={`${name} ${lastname}`} />
             {
                 userMenu &&
                 <MenuList list={userMenuList} />

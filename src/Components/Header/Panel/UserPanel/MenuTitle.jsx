@@ -1,7 +1,7 @@
 
-export default function MenuTitle({ title, userMenu }) {
+export default function MenuTitle({ title }) {
     return (
-        <button className="menu-title" onClick={() => userMenu(preValue => !preValue)}>
+        <button className="menu-title">
             <p>
                 <em>Hola </em><b>{title}</b><em> !</em>
             </p>
