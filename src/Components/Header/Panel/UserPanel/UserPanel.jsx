@@ -19,7 +19,7 @@ export default function UserPanel() {
     }
 
     return (
-        <div className='menu-container' onMouseOver={handleShow} onMouseOut={handleShow} >
+        <div className='menu-container' onMouseOver={handleShow} onMouseOut={handleShow}>
             <MenuTitle title={`${name} ${lastname}`} />
             {
                 userMenu &&

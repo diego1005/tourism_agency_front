@@ -1,4 +1,4 @@
-//REGISTER DATA FORM
+//REGISTER FORM FIELDS
 
 export const registerFormFields = [
     {
@@ -52,6 +52,7 @@ export const loginFormButton = {
     value: "Iniciar Sesion",
 }
 
+// LOGIN FORM FIELDS
 export const loginFormFields = [
     {
         icon: <i className="fa-solid fa-envelope"></i>,

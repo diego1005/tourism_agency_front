@@ -14,16 +14,16 @@ export default function MainSection() {
   useEffect(() => {
     console.log('%cComponent Main Section is mount', 'color: green');
     userIsLogged();
-    switchViews(view);
+    switchViews();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [view])
 
-  const views = {
+  let views = {
     "newStudent": <NewStudent />,
     "newContract": <NewContract />,
   }
 
-  const switchViews = (view) => {
+  const switchViews = () => {
     return views[view] ? views[view] : <Dashboard />
   }
 
