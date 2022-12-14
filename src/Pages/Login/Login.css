@@ -53,12 +53,8 @@
     border: 1px solid black;
 }
 
-.form-field {
-    width: 80%;
-}
-
 .btn-login-container {
-    width: 50%;
+    width: 40%;
 }
 
 .btn-login {

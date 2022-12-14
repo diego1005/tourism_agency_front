@@ -1,16 +1,16 @@
 import Form from '../../Form/Form';
-import { loginFormInfo, loginFormFields, loginFormButton } from '../../../Common/Form/formData';
+import { loginFormData, loginFormFields, loginFormButton } from '../../../Common/Form/userForm';
 import LoginIcon from './LoginIcon';
 
 export default function LoginForm() {
 
-    const { loginFormClass } = loginFormInfo;
+    const { loginFormName } = loginFormData;
 
     return (
         <div className="login-form-container">
-            <LoginIcon/>
+            <LoginIcon />
             <Form
-                formName={loginFormClass}
+                formName={loginFormName}
                 formFields={loginFormFields}
                 formButton={loginFormButton}
             />

@@ -31,6 +31,11 @@ export const registerFormFields = [
         name: "confirmPassword",
         pHolder: "ConfirmPassword",
     },
+    {
+        type: "hidden",
+        name: "id_role",
+        value: 1,
+    }
 ]
 
 export const formImg = {
@@ -40,11 +45,13 @@ export const formImg = {
     ref: undefined,
 }
 
-//LOGIN DATA FORM
+// LOGIN FORM DATA
 
-export const loginFormInfo = {
-    loginFormClass: "login-form",
+export const loginFormData = {
+    loginFormName: "login-form",
 }
+
+// LOGIN FORM FIELDS
 
 export const loginFormButton = {
     classBtnContainer: "btn-login-container",
@@ -52,7 +59,6 @@ export const loginFormButton = {
     value: "Iniciar Sesion",
 }
 
-// LOGIN FORM FIELDS
 export const loginFormFields = [
     {
         icon: <i className="fa-solid fa-envelope"></i>,

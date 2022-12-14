@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { FormHandlerContext } from "../../../Context/context";
 
-export default function FormField({ icon, type, name, pHolder }) {
+export default function FormField({ icon = null, type, field, pHolder = null, value = null }) {
 
     const { inputData, inputHandler } = useContext(FormHandlerContext)
 
@@ -13,7 +13,7 @@ export default function FormField({ icon, type, name, pHolder }) {
             <input
                 className="form-field-input"
                 type={type}
-                name={name}
+                name={field}
                 placeholder={pHolder}
                 onChange={inputHandler}
                 value={inputData.name}

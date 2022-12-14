@@ -5,14 +5,17 @@ import { FormHandlerContext } from '../../Context/context';
 import { useInputHandler } from '../../Hooks/FormHooks/useInputHandler';
 import { useSubmitHandler } from '../../Hooks/UserInnHooks/useSubmitHandler';
 
-export default function Form({ formName, formFields, formButton }) {
+export default function Form({ formName, formClass = null, formFields, formButton }) {
 
     const { submitHandler } = useSubmitHandler();
     const { inputData, inputHandler } = useInputHandler();
 
     return (
         <FormHandlerContext.Provider value={{ inputData, inputHandler }}>
-            <form name={formName} className={`form ${formName}`} onSubmit={e => submitHandler(e, inputData)}>
+            <form
+                name={formName}
+                className={formClass ? `form ${formClass}` : "form"}
+                onSubmit={e => submitHandler(e, inputData)}>
                 {
                     formFields.map((field, idx) =>
                         <FormField
