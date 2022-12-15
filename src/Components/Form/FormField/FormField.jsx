@@ -16,7 +16,7 @@ export default function FormField({ icon = null, type, field, pHolder = null, va
                 name={field}
                 placeholder={pHolder}
                 onChange={inputHandler}
-                value={inputData.name}
+                value={value ? value : inputData.name}
             />
         </div>
 

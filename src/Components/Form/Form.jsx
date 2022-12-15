@@ -22,7 +22,7 @@ export default function Form({ formName, formClass = null, formFields, formButto
                             key={idx}
                             icon={field.icon}
                             type={field.type}
-                            name={field.name}
+                            field={field.name}
                             pHolder={field.pHolder}
                         />
                     )

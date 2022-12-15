@@ -9,8 +9,6 @@ export const useSubmitHandler = () => {
         //Prevent default behaviour
         e.preventDefault();
 
-        console.log("entro?");
-
         const { name } = e.target;
 
         if (name === "login-form") loginHandler(data);
