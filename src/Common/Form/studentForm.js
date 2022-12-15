@@ -16,7 +16,7 @@ export const studentFormFields = [
     {
         icon: <i className="fa-solid fa-user"></i>,
         type: "text",
-        name: "name",
+        name: "firstname",
         pHolder: "Nombre",
     },
     {

@@ -6,7 +6,7 @@ import { AppContext } from '../../../Context/context'
 
 export default function UserNav() {
 
-  const { userLogged } = useContext(AppContext)
+  const { userLogged } = useContext(AppContext);
 
   return (
     <div className='panel'>

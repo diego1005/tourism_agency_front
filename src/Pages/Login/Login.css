@@ -32,15 +32,27 @@
     border: 1px solid black;
 }
 
+.login-form-icon-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    height: 10%;
+}
+
 .login-form-icon {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 4rem;
-    height: 10%;
+    height: 100%;
     font-size: 2rem;
     border-radius: 50%;
     border: 1px solid black;
+}
+
+.login-admin-icon {
+    font-size: 1.5rem;
 }
 
 .login-form {

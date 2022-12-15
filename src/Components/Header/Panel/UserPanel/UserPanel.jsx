@@ -11,7 +11,7 @@ export default function UserPanel() {
     const [userMenu, setUserMenu] = useState(false);
     const { userLogged } = useContext(AppContext);
 
-    const { name, lastname } = userLogged;
+    const { firstname, lastname } = userLogged;
 
     const handleShow = ({ type }) => {
         if (type === "mouseover") setUserMenu(true);
@@ -20,7 +20,7 @@ export default function UserPanel() {
 
     return (
         <div className='menu-container' onMouseOver={handleShow} onMouseOut={handleShow}>
-            <MenuTitle title={`${name} ${lastname}`} />
+            <MenuTitle title={`${firstname} ${lastname}`} />
             {
                 userMenu &&
                 <MenuList list={userMenuList} />
