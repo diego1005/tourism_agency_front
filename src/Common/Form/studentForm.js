@@ -26,6 +26,12 @@ export const studentFormFields = [
         pHolder: "Apellido",
     },
     {
+        icon: <i className="fa-solid fa-envelope"></i>,
+        type: "email",
+        name: "email",
+        pHolder: "Email",
+    },
+    {
         icon: <i className="fa-solid fa-cake-candles"></i>,
         type: "date",
         name: "birth_date",
@@ -38,8 +44,19 @@ export const studentFormFields = [
         pHolder: "Telefono",
     },
     {
-        type: "hidden",
-        name: "id_role",
-        value: 2,
-    }
+        icon: <i className="fa-solid fa-lock"></i>,
+        type: "password",
+        name: "password",
+        pHolder: "Password",
+    },
+    {
+        icon: <i className="fa-solid fa-lock"></i>,
+        type: "password",
+        name: "confirmPassword",
+        pHolder: "ConfirmPassword",
+    },
 ]
+
+export const role = {
+    id_role: 2,
+}
