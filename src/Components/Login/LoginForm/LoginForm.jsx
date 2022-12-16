@@ -1,5 +1,5 @@
 import Form from '../../Form/Form';
-import { loginFormData, loginFormFields, loginFormButton } from '../../../Common/Form/userForm';
+import { loginFormData, loginFormFields, loginFormButton, role } from '../../../Common/Form/userForm';
 import LoginIcon from './LoginIcon';
 
 export default function LoginForm() {
@@ -13,6 +13,7 @@ export default function LoginForm() {
                 formName={loginFormName}
                 formFields={loginFormFields}
                 formButton={loginFormButton}
+                role={role}
             />
         </div>
     )

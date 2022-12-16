@@ -35,7 +35,7 @@ export const studentFormFields = [
         icon: <i className="fa-solid fa-cake-candles"></i>,
         type: "date",
         name: "birth_date",
-        pHolder: "Fecha de Nacimiento",
+        label: "Fecha de Nacimiento",
     },
     {
         icon: <i className="fa-solid fa-phone"></i>,

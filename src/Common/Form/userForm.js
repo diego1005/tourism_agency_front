@@ -31,12 +31,11 @@ export const registerFormFields = [
         name: "confirmPassword",
         pHolder: "ConfirmPassword",
     },
-    {
-        type: "hidden",
-        name: "id_role",
-        value: 1,
-    }
 ]
+
+export const role = {
+    id_role: 1,
+}
 
 export const formImg = {
     icon: <i className="fa-solid fa-image"></i>,

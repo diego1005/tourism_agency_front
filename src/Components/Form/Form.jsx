@@ -20,10 +20,12 @@ export default function Form({ formName, formClass = null, formFields, role, for
                     formFields.map((field, idx) =>
                         <FormField
                             key={idx}
+                            tag={field.tag}
                             icon={field.icon}
                             type={field.type}
                             field={field.name}
                             pHolder={field.pHolder}
+                            label={field.label}
                         />
                     )
                 }

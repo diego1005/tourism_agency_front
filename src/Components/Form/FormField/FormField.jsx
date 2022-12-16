@@ -1,7 +1,8 @@
+import { createElement } from 'react'
 import { useContext } from "react";
 import { FormHandlerContext } from "../../../Context/context";
 
-export default function FormField({ icon = null, type, field, pHolder = null }) {
+export default function FormField({ tag = "input", icon = null, type = null, field, pHolder = null, label = null }) {
 
     const { inputData, inputHandler } = useContext(FormHandlerContext)
 
@@ -10,15 +11,24 @@ export default function FormField({ icon = null, type, field, pHolder = null }) 
             <div className="form-field-icon">
                 {icon}
             </div>
-            <input
-                className="form-field-input"
-                type={type}
-                name={field}
-                placeholder={pHolder}
-                onChange={inputHandler}
-                value={inputData.name}
-            />
+            {
+                label &&
+                <label>{label}</label>
+            }
+            {
+                createElement
+                    (
+                        tag,
+                        {
+                            className: "form-field-input",
+                            type: type,
+                            name: field,
+                            placeholder: pHolder,
+                            onChange: inputHandler,
+                            value: inputData.name,
+                        }
+                    )
+            }
         </div>
-
     )
 }
