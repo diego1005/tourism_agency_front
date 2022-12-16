@@ -45,13 +45,9 @@ export const individualContractFormFields = [
         label: "Estado del Contrato",
     },
     {
-        type: "checkbox",
-        label: "Contrato General",
-    },
-    {
         tag: "select",
-        icon: <i className="fa-solid fa-tag"></i>,
+        icon: <i className="fa-solid fa-file-contract"></i>,
         name: "id_general_contract",
-        label: "Selecciona",
+        label: "Selecciona el Contrato General Asociado",
     },
 ]

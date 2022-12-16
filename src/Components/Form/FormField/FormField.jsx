@@ -7,28 +7,30 @@ export default function FormField({ tag = "input", icon = null, type = null, fie
     const { inputData, inputHandler } = useContext(FormHandlerContext)
 
     return (
-        <div className="form-field">
-            <div className="form-field-icon">
-                {icon}
-            </div>
+        <div className="form-field-container">
             {
                 label &&
-                <label>{label}</label>
+                <label className='form-label'>{label}</label>
             }
-            {
-                createElement
-                    (
-                        tag,
-                        {
-                            className: "form-field-input",
-                            type: type,
-                            name: field,
-                            placeholder: pHolder,
-                            onChange: inputHandler,
-                            value: inputData.name,
-                        }
-                    )
-            }
+            <div className="form-field">
+                <div className="form-field-icon">
+                    {icon}
+                </div>
+                {
+                    createElement
+                        (
+                            tag,
+                            {
+                                className: "form-field-input",
+                                type: type,
+                                name: field,
+                                placeholder: pHolder,
+                                onChange: inputHandler,
+                                value: inputData.name,
+                            }
+                        )
+                }
+            </div>
         </div>
     )
 }

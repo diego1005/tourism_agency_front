@@ -8,19 +8,32 @@
     border: 1px solid black;
 }
 
+.form-field-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+}
+
 .form-field {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80%  ;
+    width: 100%;
+}
+
+.form-label {
+    align-self: flex-start;
+    margin-bottom: 0.5rem;
 }
 
 .form-field-icon {
-    margin: 0 1rem;
+    width: 10%;
 }
 
 .form-field-input {
-    width: 40%;
+    width: 90%;
     font-size: 1.2rem;
 }
 
