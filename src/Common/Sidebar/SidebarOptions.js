@@ -23,11 +23,11 @@ export const sidebarOptions = [
         subOptions: [
             {
                 title: "Nuevo",
-                newView: "newContract",
+                newView: "individual",
             },
             {
                 title: "Listar",
-                newView: "contractList",
+                newView: "individualList",
             },
         ]
     },
@@ -37,11 +37,11 @@ export const sidebarOptions = [
         subOptions: [
             {
                 title: "Nuevo",
-                newView: "newTravelContract",
+                newView: "general",
             },
             {
                 title: "Listar",
-                newView: "travelContractList",
+                newView: "generalList",
             },
         ]
     },

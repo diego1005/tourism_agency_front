@@ -1,13 +1,12 @@
-//INDIVIDUAL CONTRACTS
-//DATA
+//CONTRACT FORM DATA
 
-export const individualContractFormData = {
-    individualContractFormName: "individual-contract-form",
+export const contractFormData = {
+    contractFormName: "contract-form",
 }
 
-//FORM FIELDS
+//CONTRACT FORM FIELDS
 
-export const individualContractFormFields = [
+export const contractFormFields = [
     {
         icon: <i className="fa-solid fa-hashtag"></i>,
         type: "text",
@@ -26,6 +25,11 @@ export const individualContractFormFields = [
         name: "indicated_value",
         pHolder: "Valor indicado",
     },
+]
+
+//INDIVIDUAL CONTRACTS FORM FIELDS
+
+export const individualFormFields = [
     {
         tag: "select",
         icon: <i className="fa-regular fa-credit-card"></i>,
@@ -49,5 +53,28 @@ export const individualContractFormFields = [
         icon: <i className="fa-solid fa-file-contract"></i>,
         name: "id_general_contract",
         label: "Selecciona el Contrato General Asociado",
+    },
+]
+
+//GENERAL CONTRACTS FORM FIELDS
+
+export const generalFormFields = [
+    {
+        type: "date",
+        icon: <i className="fa-regular fa-calendar"></i>,
+        name: "travel_date",
+        label: "Fecha del Viaje",
+    },
+    {
+        tag: "select",
+        icon: <i className="fa-solid fa-location-dot"></i>,
+        name: "travel_destination",
+        label: "Destino del Viaje",
+    },
+    {
+        tag: "select",
+        icon: <i className="fa-solid fa-tag"></i>,
+        name: "id_state_general_contract",
+        label: "Estado del Contrato",
     },
 ]

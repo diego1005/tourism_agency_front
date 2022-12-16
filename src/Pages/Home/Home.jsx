@@ -9,8 +9,6 @@ export default function Home() {
 
   const [view, setView] = useState();
 
-  console.log(view);
-
   return (
     <ViewContext.Provider value={{ view, setView }}>
       <div className='home'>
