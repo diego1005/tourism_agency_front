@@ -1,10 +1,10 @@
-import { createElement } from 'react'
+import { createElement } from 'react';
 import { useContext } from "react";
 import { FormHandlerContext } from "../../../Context/context";
 
-export default function FormField({ tag = "input", icon = null, type = null, field, pHolder = null, label = null }) {
+export default function FormField({ tag = "input", icon = null, type = null, field, pHolder = null, label = null, formData = null }) {
 
-    const { inputData, inputHandler } = useContext(FormHandlerContext)
+    const { inputData, inputHandler } = useContext(FormHandlerContext);
 
     return (
         <div className="form-field-container">
@@ -27,7 +27,14 @@ export default function FormField({ tag = "input", icon = null, type = null, fie
                                 placeholder: pHolder,
                                 onChange: inputHandler,
                                 value: inputData.name,
-                            }
+                            },
+                            (tag === 'select' && field === 'payment_method' && formData.length > 0)
+                                ? formData.map(({ payment }, idx) =>
+                                    <option
+                                        key={idx}
+                                        name={payment.toLowerCase()}>{payment}</option>
+                                )
+                                : undefined
                         )
                 }
             </div>

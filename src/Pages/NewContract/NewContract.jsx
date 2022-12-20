@@ -5,24 +5,30 @@ import Form from '../../Components/Form/Form';
 import { contractFormData, contractFormFields, individualFormFields, generalFormFields } from '../../Common/Form/contractForm';
 import { formButton } from '../../Common/Form/formData';
 import { ViewContext } from '../../Context/context';
+import { useContract } from '../../Hooks/ContractHooks/useContract';
 
 export default function NewContract() {
 
   const [formFields, setFormFields] = useState([]);
+  const [paymentList, setPaymentList] = useState({});
   const [caption, setCaption] = useState();
+
+  const { bringPayments } = useContract();
 
   const { view } = useContext(ViewContext);
 
   const { contractFormName } = contractFormData;
   const classIcon = "fa-solid fa-file-contract";
-  
+
   useEffect(() => {
     showContract();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [view]);
 
-  const showContract = () => {
+  const showContract = async () => {
     if (view === "individual") {
+      const data = await bringPayments();
+      setPaymentList(data);
       setFormFields([...contractFormFields, ...individualFormFields]);
       setCaption(" ALTA DE CONTRATO INDIVIDUAL");
     }
@@ -38,6 +44,7 @@ export default function NewContract() {
       <Form
         formName={contractFormName}
         formFields={formFields}
+        formData={paymentList}
         formButton={formButton}
       />
     </div>
