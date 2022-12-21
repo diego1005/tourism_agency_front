@@ -6,6 +6,8 @@ export default function FormField({ tag = "input", icon = null, type = null, fie
 
     const { inputData, inputHandler } = useContext(FormHandlerContext);
 
+    // console.log(formData);
+
     return (
         <div className="form-field-container">
             {
@@ -28,13 +30,13 @@ export default function FormField({ tag = "input", icon = null, type = null, fie
                                 onChange: inputHandler,
                                 value: inputData.name,
                             },
-                            (tag === 'select' && field === 'payment_method' && formData.length > 0)
-                                ? formData.map(({ payment }, idx) =>
-                                    <option
-                                        key={idx}
-                                        name={payment.toLowerCase()}>{payment}</option>
-                                )
-                                : undefined
+                            // (tag === 'select' && field === 'payment_method' && formData.length > 0)
+                            //     ? formData.map(({ payment }, idx) =>
+                            //         <option
+                            //             key={idx}
+                            //             name={payment.toLowerCase()}>{payment}</option>
+                            //     )
+                            //     : undefined
                         )
                 }
             </div>

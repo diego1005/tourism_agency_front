@@ -10,10 +10,10 @@ import { useContract } from '../../Hooks/ContractHooks/useContract';
 export default function NewContract() {
 
   const [formFields, setFormFields] = useState([]);
-  const [paymentList, setPaymentList] = useState({});
+  const [formData, setFormData] = useState([]);
   const [caption, setCaption] = useState();
 
-  const { bringPayments } = useContract();
+  const { students, generalContracts, paymentMethods, states, bringData, } = useContract();
 
   const { view } = useContext(ViewContext);
 
@@ -25,10 +25,11 @@ export default function NewContract() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [view]);
 
-  const showContract = async () => {
+  const showContract = () => {
     if (view === "individual") {
-      const data = await bringPayments();
-      setPaymentList(data);
+      bringData();
+      setFormData(students, generalContracts, paymentMethods, states);
+      console.log(students, generalContracts, paymentMethods, states);
       setFormFields([...contractFormFields, ...individualFormFields]);
       setCaption(" ALTA DE CONTRATO INDIVIDUAL");
     }
@@ -44,7 +45,7 @@ export default function NewContract() {
       <Form
         formName={contractFormName}
         formFields={formFields}
-        formData={paymentList}
+        formData={formData}
         formButton={formButton}
       />
     </div>
