@@ -5,7 +5,7 @@ import { FormHandlerContext } from '../../Context/context';
 import { useInputHandler } from '../../Hooks/FormHooks/useInputHandler';
 import { useSubmitHandler } from '../../Hooks/UserInnHooks/useSubmitHandler';
 
-export default function Form({ formName, formClass = null, formFields, role, formButton, formData }) {
+export default function Form({ formName, formClass = null, formFields, role, formButton }) {
 
     const { submitHandler } = useSubmitHandler();
     const { inputData, inputHandler } = useInputHandler();
@@ -26,7 +26,6 @@ export default function Form({ formName, formClass = null, formFields, role, for
                             field={field.name}
                             pHolder={field.pHolder}
                             label={field.label}
-                            formData={formData}
                         />
                     )
                 }

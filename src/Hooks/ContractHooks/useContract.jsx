@@ -1,51 +1,30 @@
-import { useState, useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import { AppContext } from '../../Context/context';
+import { individualFormFields } from '../../Common/Form/contractForm';
 import { getPaymentMethods, getStates, getGeneralContracts, getStudents } from '../../Services/contractServices';
 
 export const useContract = () => {
 
-    const [paymentMethods, setPaymentMethods] = useState();
-    const [states, setStates] = useState();
-    const [generalContracts, setGeneralContracts] = useState();
-    const [students, setStudents] = useState();
-
     const { userLogged } = useContext(AppContext);
     const { id_role } = userLogged;
 
-    useEffect(() => {
+    const bringData = async () => {
+        const { data: payments } = await getPaymentMethods();
+        const { data: states } = await getStates(id_role);
+        const { data: general } = await getGeneralContracts(id_role);
+        const { data: students } = await getStudents();
 
-        const bringPayments = async () => {
-            const { data } = await getPaymentMethods();
-            setPaymentMethods(data);
-        }
+        const optionData = [payments, states, general, students];
 
-        const bringStates = async () => {
-            const { data } = await getStates(id_role);
-            setStates(data);
-        }
+        individualFormFields.forEach((field, idx) =>
+            field.options = optionData[idx]
+        )
 
-        const bringGeneralContracts = async () => {
-            const { data } = await getGeneralContracts(id_role);
-            setGeneralContracts(data);
-        }
+        return individualFormFields;
 
-        const bringStudents = async () => {
-            const { data } = await getStudents();
-            setStudents(data);
-        }
-
-        bringGeneralContracts();
-        bringPayments();
-        bringStates();
-        bringStudents();
-
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    }
 
     return {
-        students,
-        generalContracts,
-        paymentMethods,
-        states,
+        bringData,
     }
 }

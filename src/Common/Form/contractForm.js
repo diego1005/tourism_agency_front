@@ -35,24 +35,28 @@ export const individualFormFields = [
         icon: <i className="fa-regular fa-credit-card"></i>,
         name: "payment_method",
         label: "Metodo de pago",
+        options: {},
     },
     {
         tag: "select",
         icon: <i className="fa-solid fa-child"></i>,
         name: "id_user",
         label: "Nombre del Estudiante",
+        options: {},
     },
     {
         tag: "select",
         icon: <i className="fa-solid fa-tag"></i>,
         name: "id_state_individual_contract",
         label: "Estado del Contrato",
+        options: {},
     },
     {
         tag: "select",
         icon: <i className="fa-solid fa-file-contract"></i>,
         name: "id_general_contract",
         label: "Selecciona el Contrato General Asociado",
+        options: {},
     },
 ]
 

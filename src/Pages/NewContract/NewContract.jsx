@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from 'react';
 import './NewContract.css';
 import Top from '../../Components/Top/Top';
 import Form from '../../Components/Form/Form';
-import { contractFormData, contractFormFields, individualFormFields, generalFormFields } from '../../Common/Form/contractForm';
+import { contractFormData, contractFormFields, generalFormFields, individualFormFields } from '../../Common/Form/contractForm';
 import { formButton } from '../../Common/Form/formData';
 import { ViewContext } from '../../Context/context';
 import { useContract } from '../../Hooks/ContractHooks/useContract';
@@ -10,10 +10,9 @@ import { useContract } from '../../Hooks/ContractHooks/useContract';
 export default function NewContract() {
 
   const [formFields, setFormFields] = useState([]);
-  const [formData, setFormData] = useState([]);
   const [caption, setCaption] = useState();
 
-  const { /*students, generalContracts, */paymentMethods, states } = useContract();
+  const { bringData } = useContract();
 
   const { view } = useContext(ViewContext);
 
@@ -23,11 +22,11 @@ export default function NewContract() {
   useEffect(() => {
     const showContract = async () => {
       if (view === "individual") {
-        if (paymentMethods && states) {
-          setFormData([/*...students, ...generalContracts, */...paymentMethods, ...states])
-          setFormFields([...contractFormFields, ...individualFormFields]);
-          setCaption(" ALTA DE CONTRATO INDIVIDUAL");
-        }
+        const individualFormFields = await bringData();
+        console.log(individualFormFields);
+        console.log("que pue");
+        setFormFields([...contractFormFields, ...individualFormFields]);
+        setCaption(" ALTA DE CONTRATO INDIVIDUAL");
       }
       if (view === "general") {
         setFormFields([...contractFormFields, ...generalFormFields]);
@@ -36,7 +35,7 @@ export default function NewContract() {
     }
     showContract();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [view, paymentMethods, states]);
+  }, [view, individualFormFields]);
 
 
   return (
@@ -45,7 +44,6 @@ export default function NewContract() {
       <Form
         formName={contractFormName}
         formFields={formFields}
-        formData={formData}
         formButton={formButton}
       />
     </div>
