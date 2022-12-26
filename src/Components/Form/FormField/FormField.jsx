@@ -1,12 +1,20 @@
 import { createElement } from 'react';
 import { useContext } from "react";
 import { FormHandlerContext } from "../../../Context/context";
+import FormOpt from '../FormOpt/FormOpt';
 
 export default function FormField({ tag = "input", icon = null, type = null, field, pHolder = null, label = null, formData = null }) {
 
     const { inputData, inputHandler } = useContext(FormHandlerContext);
 
-    // console.log(formData);
+    const selectFields = [
+        "payment_method",
+        "id_state_individual_contract",
+        "id_user",
+        "id_general_contract"
+    ];
+
+    //crear un objeto formOption con la data necesaria para iterar las opciones de cada select
 
     return (
         <div className="form-field-container">
@@ -30,13 +38,11 @@ export default function FormField({ tag = "input", icon = null, type = null, fie
                                 onChange: inputHandler,
                                 value: inputData.name,
                             },
-                            // (tag === 'select' && field === 'payment_method' && formData.length > 0)
-                            //     ? formData.map(({ payment }, idx) =>
-                            //         <option
-                            //             key={idx}
-                            //             name={payment.toLowerCase()}>{payment}</option>
-                            //     )
-                            //     : undefined
+                            (tag === 'select' && selectFields.includes(field) && formData.length > 0)
+                                ? formData.map((option, idx) =>
+                                    <FormOpt key={idx} opt={option} />
+                                )
+                                : undefined
                         )
                 }
             </div>

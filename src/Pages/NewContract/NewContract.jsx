@@ -13,7 +13,7 @@ export default function NewContract() {
   const [formData, setFormData] = useState([]);
   const [caption, setCaption] = useState();
 
-  const { students, generalContracts, paymentMethods, states, bringData, } = useContract();
+  const { /*students, generalContracts, */paymentMethods, states } = useContract();
 
   const { view } = useContext(ViewContext);
 
@@ -21,23 +21,23 @@ export default function NewContract() {
   const classIcon = "fa-solid fa-file-contract";
 
   useEffect(() => {
+    const showContract = async () => {
+      if (view === "individual") {
+        if (paymentMethods && states) {
+          setFormData([/*...students, ...generalContracts, */...paymentMethods, ...states])
+          setFormFields([...contractFormFields, ...individualFormFields]);
+          setCaption(" ALTA DE CONTRATO INDIVIDUAL");
+        }
+      }
+      if (view === "general") {
+        setFormFields([...contractFormFields, ...generalFormFields]);
+        setCaption(" ALTA DE CONTRATO GENERAL");
+      }
+    }
     showContract();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [view]);
+  }, [view, paymentMethods, states]);
 
-  const showContract = () => {
-    if (view === "individual") {
-      bringData();
-      setFormData(students, generalContracts, paymentMethods, states);
-      console.log(students, generalContracts, paymentMethods, states);
-      setFormFields([...contractFormFields, ...individualFormFields]);
-      setCaption(" ALTA DE CONTRATO INDIVIDUAL");
-    }
-    if (view === "general") {
-      setFormFields([...contractFormFields, ...generalFormFields]);
-      setCaption(" ALTA DE CONTRATO GENERAL");
-    }
-  }
 
   return (
     <div className='new-contract-form-container'>

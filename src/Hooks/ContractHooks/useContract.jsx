@@ -1,7 +1,6 @@
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { AppContext } from '../../Context/context';
 import { getPaymentMethods, getStates, getGeneralContracts, getStudents } from '../../Services/contractServices';
-
 
 export const useContract = () => {
 
@@ -13,38 +12,40 @@ export const useContract = () => {
     const { userLogged } = useContext(AppContext);
     const { id_role } = userLogged;
 
-    const bringPayments = async () => {
-        const { data } = await getPaymentMethods();
-        setPaymentMethods(data);
-    }
+    useEffect(() => {
 
-    const bringStates = async () => {
-        const { data } = await getStates(id_role);
-        setStates(data);
-    }
+        const bringPayments = async () => {
+            const { data } = await getPaymentMethods();
+            setPaymentMethods(data);
+        }
 
-    const bringGeneralContracts = async () => {
-        const { data } = await getGeneralContracts(id_role);
-        setGeneralContracts(data);
-    }
+        const bringStates = async () => {
+            const { data } = await getStates(id_role);
+            setStates(data);
+        }
 
-    const bringStudents = async () => {
-        const { data } = await getStudents();
-        setStudents(data);
-    }
+        const bringGeneralContracts = async () => {
+            const { data } = await getGeneralContracts(id_role);
+            setGeneralContracts(data);
+        }
 
-    const bringData = async () => {
+        const bringStudents = async () => {
+            const { data } = await getStudents();
+            setStudents(data);
+        }
+
+        bringGeneralContracts();
         bringPayments();
         bringStates();
-        bringGeneralContracts();
         bringStudents();
-    }
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     return {
         students,
         generalContracts,
         paymentMethods,
         states,
-        bringData,
     }
 }
