@@ -11,14 +11,14 @@ export default function MainSection() {
   const { userLogged, userIsLogged } = useContext(AppContext);
   const { view } = useContext(ViewContext);
 
-  console.log(view);
-
   useEffect(() => {
     console.log('%cComponent Main Section is mount', 'color: green');
     userIsLogged();
     switchViews();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [view])
+
+  console.log(view);
 
   let views = {
     "newStudent": <NewStudent />,

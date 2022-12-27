@@ -74,11 +74,13 @@ export const generalFormFields = [
         icon: <i className="fa-solid fa-location-dot"></i>,
         name: "travel_destination",
         label: "Destino del Viaje",
+        options: {},
     },
     {
         tag: "select",
         icon: <i className="fa-solid fa-tag"></i>,
         name: "id_state_general_contract",
         label: "Estado del Contrato",
+        options: {},
     },
 ]

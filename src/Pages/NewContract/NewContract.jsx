@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from 'react';
 import './NewContract.css';
 import Top from '../../Components/Top/Top';
 import Form from '../../Components/Form/Form';
-import { contractFormData, contractFormFields, generalFormFields } from '../../Common/Form/contractForm';
+import { contractFormData, contractFormFields } from '../../Common/Form/contractForm';
 import { formButton } from '../../Common/Form/formData';
 import { ViewContext } from '../../Context/context';
 import { useContract } from '../../Hooks/ContractHooks/useContract';
@@ -12,9 +12,9 @@ export default function NewContract() {
   const [formFields, setFormFields] = useState([]);
   const [caption, setCaption] = useState();
 
-  const { contractFields } = useContract();
-
   const { view } = useContext(ViewContext);
+
+  const { contractFields } = useContract();
 
   const { contractFormName } = contractFormData;
   const classIcon = "fa-solid fa-file-contract";
@@ -26,7 +26,7 @@ export default function NewContract() {
         setCaption(" ALTA DE CONTRATO INDIVIDUAL");
       }
       if (view === "general") {
-        setFormFields([...contractFormFields, ...generalFormFields]);
+        setFormFields([...contractFormFields, ...contractFields]);
         setCaption(" ALTA DE CONTRATO GENERAL");
       }
     }

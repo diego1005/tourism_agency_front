@@ -6,6 +6,8 @@ function FormOpt({ name, option }) {
         "id_user": "name",
         "id_state_individual_contract": option.state,
         "id_general_contract": "nro_contract",
+        "travel_destination": "travel",
+        "id_state_general_contract": option.state
     }
 
     return (
