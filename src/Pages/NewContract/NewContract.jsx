@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from 'react';
 import './NewContract.css';
 import Top from '../../Components/Top/Top';
 import Form from '../../Components/Form/Form';
-import { contractFormData, contractFormFields, generalFormFields, individualFormFields } from '../../Common/Form/contractForm';
+import { contractFormData, contractFormFields, generalFormFields } from '../../Common/Form/contractForm';
 import { formButton } from '../../Common/Form/formData';
 import { ViewContext } from '../../Context/context';
 import { useContract } from '../../Hooks/ContractHooks/useContract';
@@ -12,7 +12,7 @@ export default function NewContract() {
   const [formFields, setFormFields] = useState([]);
   const [caption, setCaption] = useState();
 
-  const { bringData } = useContract();
+  const { contractFields } = useContract();
 
   const { view } = useContext(ViewContext);
 
@@ -20,12 +20,13 @@ export default function NewContract() {
   const classIcon = "fa-solid fa-file-contract";
 
   useEffect(() => {
+    console.log(contractFields);
+  }, [contractFields])
+
+  useEffect(() => {
     const showContract = async () => {
       if (view === "individual") {
-        const individualFormFields = await bringData();
-        console.log(individualFormFields);
-        console.log("que pue");
-        setFormFields([...contractFormFields, ...individualFormFields]);
+        // setFormFields([...contractFormFields, ...individual  FormFields]);
         setCaption(" ALTA DE CONTRATO INDIVIDUAL");
       }
       if (view === "general") {
@@ -35,7 +36,7 @@ export default function NewContract() {
     }
     showContract();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [view, individualFormFields]);
+  }, [view]);
 
 
   return (
