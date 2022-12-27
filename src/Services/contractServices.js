@@ -8,7 +8,7 @@ export const getStates = async (role) => {
 }
 //general contracts
 export const getGeneralContracts = async (role) => {
-    const data = await getByApi("contract", "general", undefined, role);
+    const data = await getByApi("contract", "general/list", undefined, role);
     return data;
 }
 //students

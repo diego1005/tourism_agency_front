@@ -1,39 +1,36 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { AppContext } from '../../Context/context';
 import { individualFormFields } from '../../Common/Form/contractForm';
 import { getPaymentMethods, getStates, getGeneralContracts, getStudents } from '../../Services/contractServices';
 
 export const useContract = () => {
 
-    const [payments, setPayments] = useState();
-    const [states, setStates] = useState();
-    const [general, setGeneral] = useState();
-    const [students, setStudents] = useState();
-    const [contractFields, setContractFields] = useState();
+    const [contractFields, setContractFields] = useState([]);
+    const [optionData, setOptionData] = useState([])
 
     const { userLogged } = useContext(AppContext);
     const { id_role } = userLogged;
 
-    const bringData = async () => {
-        const { data: payments } = await getPaymentMethods();
-        setPayments(payments);
-        const { data: states } = await getStates(id_role);
-        setStates(states);
-        const { data: general } = await getGeneralContracts(id_role);
-        setGeneral(general);
-        const { data: students } = await getStudents();
-        setStudents(students);
-    }
+    useEffect(() => {
 
-    bringData();
-
-    const optionData = [payments, states, general, students];
-
-    individualFormFields = individualFormFields.map(({ options }, idx) =>
-        options = optionData[idx]
-    )
-
-    console.log(individualFormFields);
+        const setFormData = async () => {
+            try {
+                Promise.all([getPaymentMethods(), getStudents(), getStates(id_role), getGeneralContracts(id_role)])
+                    .then(response => {
+                        const data = response.map(element => element.data);
+                        setOptionData(data);
+                        for (let i = 0; i < individualFormFields.length; i++) {
+                            individualFormFields[i].options = optionData[i];
+                        }
+                        setContractFields(individualFormFields);
+                    });
+            } catch (error) {
+                console.error(error);
+            }
+        }
+        setFormData();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [contractFields]);
 
     return {
         contractFields,

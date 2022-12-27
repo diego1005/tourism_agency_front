@@ -26,6 +26,7 @@ export default function Form({ formName, formClass = null, formFields, role, for
                             field={field.name}
                             pHolder={field.pHolder}
                             label={field.label}
+                            options={field.options}
                         />
                     )
                 }

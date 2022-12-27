@@ -20,13 +20,9 @@ export default function NewContract() {
   const classIcon = "fa-solid fa-file-contract";
 
   useEffect(() => {
-    console.log(contractFields);
-  }, [contractFields])
-
-  useEffect(() => {
     const showContract = async () => {
       if (view === "individual") {
-        // setFormFields([...contractFormFields, ...individual  FormFields]);
+        setFormFields([...contractFormFields, ...contractFields]);
         setCaption(" ALTA DE CONTRATO INDIVIDUAL");
       }
       if (view === "general") {
@@ -36,7 +32,7 @@ export default function NewContract() {
     }
     showContract();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [view]);
+  }, [view, contractFields]);
 
 
   return (

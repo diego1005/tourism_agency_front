@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { FormHandlerContext } from "../../../Context/context";
 import FormOpt from '../FormOpt/FormOpt';
 
-export default function FormField({ tag = "input", icon = null, type = null, field, pHolder = null, label = null }) {
+export default function FormField({ tag = "input", icon = null, type = null, field, pHolder = null, label = null, options }) {
 
     const { inputData, inputHandler } = useContext(FormHandlerContext);
 
@@ -29,11 +29,11 @@ export default function FormField({ tag = "input", icon = null, type = null, fie
                                 onChange: inputHandler,
                                 value: inputData.name,
                             },
-                            // (tag === 'select' && selectFields.includes(field) && formData.length > 0)
-                            //     ? formData.map((option, idx) =>
-                            //         <FormOpt key={idx} opt={option} />
-                            //     )
-                            //     : undefined
+                            (tag === 'select' && options)
+                                ? options.map((option, idx) =>
+                                    <FormOpt key={idx} name={field} option={option} />
+                                )
+                                : undefined
                         )
                 }
             </div>
