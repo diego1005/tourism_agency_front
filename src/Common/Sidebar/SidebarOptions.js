@@ -43,14 +43,18 @@ export const sidebarOptions = [
                 title: "Listar",
                 newView: "generalList",
             },
+            {
+                title: "Destinos",
+                newView: "destinations",
+            },
         ]
     },
     {
-        icon: <i className="fa-solid fa-question"></i>,
-        option: "Item 5",
+        icon: <i className="fa-solid fa-cash-register"></i>,
+        option: "Caja",
     },
     {
-        icon: <i className="fa-solid fa-question"></i>,
-        option: "Item 6",
+        icon: <i className="fa-solid fa-gear"></i>,
+        option: "Configuracion",
     },
 ]
