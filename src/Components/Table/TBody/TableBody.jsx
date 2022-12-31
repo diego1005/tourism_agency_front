@@ -1,7 +1,7 @@
 
 function TableBody() {
   return (
-    <tbody>TableBody</tbody>
+    <tbody className="table-body">TableBody</tbody>
   )
 }
 

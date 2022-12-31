@@ -1,7 +1,9 @@
 
 function TableHead() {
   return (
-    <thead>TableHead</thead>
+    <thead className="table-head">
+      TableHead
+    </thead>
   )
 }
 

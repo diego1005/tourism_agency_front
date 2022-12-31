@@ -1,8 +1,8 @@
 import './Table.css';
-import TableHead from './TableHead';
-import TableBody from './TableBody';
+import TableHead from './THead/TableHead';
+import TableBody from './TBody/TableBody';
 
-function Table() {
+function Table({ listBody }) {
     return (
         <table className='table'>
             <TableHead></TableHead>

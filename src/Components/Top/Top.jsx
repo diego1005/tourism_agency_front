@@ -1,6 +1,6 @@
 import './Top.css';
 
-export default function LoginHead({ classComponent = null, classIcon, caption }) {
+export default function Top({ classComponent = null, classIcon, caption }) {
   return (
     <div className={classComponent ? classComponent : "top"}>
       <i className={classIcon}>

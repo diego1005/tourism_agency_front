@@ -7,3 +7,5 @@ export const ViewContext = createContext();
 export const FormHandlerContext = createContext();
 
 export const FormContext = createContext();
+
+export const TableContext = createContext();

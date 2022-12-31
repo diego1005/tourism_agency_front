@@ -5,6 +5,8 @@ import { AppContext, ViewContext } from '../../../Context/context';
 import Dashboard from '../../../Pages/Dashboard/Dashboard';
 import NewStudent from '../../../Pages/NewStudent/NewStudent';
 import NewContract from '../../../Pages/NewContract/NewContract';
+import ListData from '../../../Pages/ListData/ListData';
+import { studentListData, individualListData, generalListData } from '../../../Common/List';
 
 export default function MainSection() {
 
@@ -24,6 +26,9 @@ export default function MainSection() {
     "newStudent": <NewStudent />,
     "individual": <NewContract />,
     "general": <NewContract />,
+    "studentsList": <ListData listData={studentListData} />,
+    "individualList": <ListData listData={individualListData} />,
+    "generalList": <ListData listData={generalListData} />
   }
 
   const switchViews = () => {
