@@ -1,12 +1,30 @@
-export const studentListData  = {
+export const studentListData = {
     classIcon: "fa-solid fa-graduation-cap",
     caption: "Buscar Estudiante",
-    listBody: {
-        headList: {
-            
+    headList: [
+        {
+            "type": "th",
+            "value": "DNI",
         },
-        bodyList: {
-
-        }
-    }
+        {
+            "type": "th",
+            "value": "Nombre",
+        },
+        {
+            "type": "th",
+            "value": "Apellido",
+        },
+        {
+            "type": "th",
+            "value": "Email",
+        },
+        {
+            "type": "th",
+            "value": "Fecha de Nacimiento",
+        },
+        {
+            "type": "th",
+            "value": "Telefono",
+        },
+    ]
 }
