@@ -24,5 +24,11 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 100%;
+}
+
+.row td, .row th {
+    width: 6rem;
+    text-align: center;
+    word-wrap: break-word;
+    padding: 0.2rem;
 }

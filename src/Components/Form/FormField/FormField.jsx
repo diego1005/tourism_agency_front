@@ -1,11 +1,23 @@
-import { createElement } from 'react';
+import { createElement, useEffect, useState } from 'react';
 import { useContext } from "react";
 import { FormHandlerContext } from "../../../Context/context";
 import FormOpt from '../FormOpt/FormOpt';
 
 export default function FormField({ tag = "input", icon = null, type = null, field, pHolder = null, label = null, options }) {
 
+    const [optionList, setOptionList] = useState([]);
     const { inputData, inputHandler } = useContext(FormHandlerContext);
+
+    useEffect(() => {
+        if (options) {
+            const optSel = <option key={"select"} >--Seleccionar--</option>;
+            const optList = options.map((option, idx) =>
+                <FormOpt key={idx} name={field} option={option} />
+            );
+            setOptionList([optSel, ...optList])
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [options])
 
     return (
         <div className="form-field-container">
@@ -30,9 +42,7 @@ export default function FormField({ tag = "input", icon = null, type = null, fie
                                 value: inputData.name,
                             },
                             (tag === 'select' && options)
-                                ? options.map((option, idx) =>
-                                    <FormOpt key={idx} name={field} option={option} />
-                                )
+                                ? optionList
                                 : undefined
                         )
                 }

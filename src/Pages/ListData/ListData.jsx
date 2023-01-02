@@ -14,10 +14,11 @@ function ListData({ listData }) {
     const { titleView, classIcon, caption, headList } = listData;
 
     useEffect(() => {
+        console.log(titleView);
         getData(titleView);
         setBodyList(list);
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [ready])
+    }, [ready, titleView])
 
     return (
         <TableContext.Provider value={{ headList, bodyList }}>

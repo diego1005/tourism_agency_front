@@ -35,7 +35,7 @@ export const studentBodyList = (bodyList) => {
     bodyList[0].User.firstname,
     bodyList[0].User.lastname,
     bodyList[0].User.email,
-    bodyList[0].birth_date,
+    bodyList[0].birth_date.split("T")[0],
     bodyList[0].phone,
     ]
 }

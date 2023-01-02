@@ -3,7 +3,7 @@ function FormOpt({ name, option }) {
 
     const optionList = {
         "payment_method": option.payment,
-        "id_user": "name",
+        "id_user": `${option.User?.firstname} ${option.User?.lastname}`,
         "id_state_individual_contract": option.state,
         "id_general_contract": "nro_contract",
         "travel_destination": "travel",
@@ -11,8 +11,8 @@ function FormOpt({ name, option }) {
     }
 
     return (
-        <option
-            name={optionList[name].toLowerCase()}>{optionList[name]}
+        <option name={optionList[name].toLowerCase()}>
+            {optionList[name]}
         </option>
     )
 }

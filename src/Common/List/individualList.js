@@ -27,10 +27,11 @@ export const individualListData = {
 }
 
 export const individualBodyList = (bodyList) => {
-    return [bodyList.Contract.nro_contract,
-    bodyList.Contract.indicated_date,
-    bodyList.Contract.indicated_value,
-    bodyList.payment_method,
-    bodyList.StateContract.state,
+    console.log(bodyList);
+    return [bodyList[0].Contract.nro_contract,
+    bodyList[0].Contract.indicated_date.split("T")[0],
+    bodyList[0].Contract.indicated_value,
+    bodyList[0].payment_method,
+    bodyList[0].StateContract.state,
     ]
 }

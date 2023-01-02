@@ -1,4 +1,4 @@
-export const generalListData  = {
+export const generalListData = {
     titleView: "general",
     classIcon: "fa-solid fa-person-walking-luggage",
     caption: "Buscar Contrato de Viaje",
@@ -27,10 +27,10 @@ export const generalListData  = {
 }
 
 export const generalBodyList = (bodyList) => {
-    return [bodyList.Contract.nro_contract,
-    bodyList.Contract.indicated_date,
-    bodyList.Contract.indicated_value,
-    bodyList.travel_date,
-    bodyList.StateGeneralContract.state,
+    return [bodyList[0].Contract.nro_contract,
+    bodyList[0].Contract.indicated_date.split("T")[0],
+    bodyList[0].Contract.indicated_value,
+    bodyList[0].travel_date.split("T")[0],
+    bodyList[0].StateGeneralContract.state,
     ]
 }
