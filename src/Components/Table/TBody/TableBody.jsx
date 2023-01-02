@@ -1,6 +1,7 @@
 import Row from "../Row"
 
-function TableBody({ bodyList }) {
+function TableBody({ bodyList = [] }) {
+
   return (
     <tbody className="table-body">
       <tr className="row">
@@ -9,7 +10,7 @@ function TableBody({ bodyList }) {
             <Row
               key={idx}
               typeRow={element.type}
-              value={element.value}
+              value={element}
             />)
         }
       </tr>

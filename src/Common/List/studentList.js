@@ -1,4 +1,5 @@
 export const studentListData = {
+    titleView: "students",
     classIcon: "fa-solid fa-graduation-cap",
     caption: "Buscar Estudiante",
     headList: [
@@ -26,5 +27,15 @@ export const studentListData = {
             "type": "th",
             "value": "Telefono",
         },
+    ]
+}
+
+export const studentBodyList = (bodyList) => {
+    return [bodyList[0].dni,
+    bodyList[0].User.firstname,
+    bodyList[0].User.lastname,
+    bodyList[0].User.email,
+    bodyList[0].birth_date,
+    bodyList[0].phone,
     ]
 }

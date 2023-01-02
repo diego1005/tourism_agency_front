@@ -1,3 +1,3 @@
-export { studentListData } from './studentList';
-export { individualListData } from './individualList';
-export { generalListData } from './generalList';
+export { studentListData, studentBodyList } from './studentList';
+export { individualListData, individualBodyList } from './individualList';
+export { generalListData, generalBodyList } from './generalList';

@@ -11,7 +11,7 @@ function ListContent() {
     return (
         <div className="list-body">
             <ListContentHead />
-            <Table listBody={headList} />
+            <Table headList={headList} />
         </div>
     )
 }

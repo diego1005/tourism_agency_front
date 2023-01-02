@@ -2,8 +2,6 @@ import Row from '../Row';
 
 function TableHead({ headList }) {
 
-  console.log(headList);
-
   return (
     <thead className="table-head">
       <tr className='row'>

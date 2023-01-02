@@ -1,35 +1,41 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { AppContext } from "../../Context/context";
+import { studentBodyList, individualBodyList, generalBodyList } from '../../Common/List/';
 import { getIndividualContracts, getGeneralContracts, getStudents } from '../../Services/contractServices';
 
-export const Getters = () => {
+export const useGetters = () => {
 
-    const [ready, setReady] = useState(0);
-    const [studentsList, setstudentsList] = useState();
-    const [individualList, setIndividualList] = useState();
-    const [generalList, setGeneralList] = useState();
+    const [ready, setReady] = useState(false);
+    const [list, setList] = useState([]);
 
     const { userLogged } = useContext(AppContext);
     const { id_role } = userLogged;
 
-    useEffect(() => {
-        const getData = async () => {
-            const { data: students } = await getStudents();
-            const { data: individuals } = await getIndividualContracts(id_role)
-            const { data: generals } = await getGeneralContracts(id_role)
-            setstudentsList(students);
-            setIndividualList(individuals);
-            setGeneralList(generals);
-            setReady(1);
+    const getData = async (titleView) => {
+        try {
+            let bodyList = [];
+            if (titleView === "students") {
+                const { data: students } = await getStudents();
+                bodyList = studentBodyList(students);
+            }
+            if (titleView === "individual") {
+                const { data: individuals } = await getIndividualContracts(id_role)
+                bodyList = individualBodyList(individuals);
+            }
+            if (titleView === "general") {
+                const { data: generals } = await getGeneralContracts(id_role)
+                bodyList = generalBodyList(generals);
+            }
+            setList(bodyList);
+            setReady(true);
+        } catch (error) {
+            console.error(error);
         }
-
-        getData();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [ready]);
+    }
 
     return {
-        studentsList,
-        individualList,
-        generalList,
+        ready,
+        list,
+        getData,
     }
 }
