@@ -1,7 +1,7 @@
 import './NewDestination.css';
 import Form from "../../Components/Form/Form";
 import Top from "../../Components/Top/Top";
-import { destinationFormData, destinationFormFields } from '../../Common/Form/destinationForm';
+import { destinationFormData, destinationFormFields, role } from '../../Common/Form/destinationForm';
 import { formButton } from '../../Common/Form/formData';
 
 function NewDestination() {
@@ -18,6 +18,7 @@ function NewDestination() {
                 formName={destinationFormName}
                 formFields={destinationFormFields}
                 formButton={formButton}
+                role={role}
             />
         </div>
     )

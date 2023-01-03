@@ -14,7 +14,11 @@ export default function NewStudent() {
   return (
     <div className='new-student-form-container'>
       <Top classIcon={classIcon} caption={caption} />
-      <Form formName={studentFormName} formFields={studentFormFields} role={role} formButton={formButton} />
+      <Form
+        formName={studentFormName}
+        formFields={studentFormFields}
+        role={role}
+        formButton={formButton} />
     </div>
   )
 }

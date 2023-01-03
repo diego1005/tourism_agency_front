@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from 'react';
 import './NewContract.css';
 import Top from '../../Components/Top/Top';
 import Form from '../../Components/Form/Form';
-import { contractFormData, contractFormFields } from '../../Common/Form/contractForm';
+import { contractFormData, contractFormFields, role } from '../../Common/Form/contractForm';
 import { formButton } from '../../Common/Form/formData';
 import { ViewContext } from '../../Context/context';
 import { useContract } from '../../Hooks/ContractHooks/useContract';
@@ -34,9 +34,6 @@ export default function NewContract() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [view, contractFields]);
 
-  console.log(formFields);
-
-
   return (
     <div className='new-contract-form-container'>
       <Top classIcon={classIcon} caption={caption} />
@@ -44,6 +41,7 @@ export default function NewContract() {
         formName={contractFormName}
         formFields={formFields}
         formButton={formButton}
+        role={role}
       />
     </div>
   )

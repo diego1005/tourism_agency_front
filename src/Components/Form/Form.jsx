@@ -1,7 +1,8 @@
+import { useContext, useEffect, useRef } from 'react';
 import './Form.css';
 import FormButton from "./FormButton/FormButton";
 import FormField from "./FormField/FormField";
-import { FormHandlerContext } from '../../Context/context';
+import { FormHandlerContext, ViewContext } from '../../Context/context';
 import { useInputHandler } from '../../Hooks/FormHooks/useInputHandler';
 import { useSubmitHandler } from '../../Hooks/UserInnHooks/useSubmitHandler';
 
@@ -10,10 +11,19 @@ export default function Form({ formName, formClass = null, formFields, role, for
     const { submitHandler } = useSubmitHandler();
     const { inputData, inputHandler } = useInputHandler();
 
+    const { view } = useContext(ViewContext);
+
+    const form = useRef();
+
+    useEffect(() => {
+        form.current.reset();
+    }, [view])
+
     return (
         <FormHandlerContext.Provider value={{ inputData, inputHandler }}>
             <form
                 name={formName}
+                ref={form}
                 className={formClass ? `form ${formClass}` : "form"}
                 onSubmit={e => submitHandler(e, inputData, role)}>
                 {

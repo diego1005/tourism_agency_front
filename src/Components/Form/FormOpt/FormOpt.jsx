@@ -8,7 +8,7 @@ function FormOpt({ name, option }) {
         "id_user": `${option.User?.firstname} ${option.User?.lastname}`,
         "id_state_individual_contract": option.state,
         "id_general_contract": "nro_contract",
-        "travel_destination": "travel",
+        "travel_destination": option.destination,
         "id_state_general_contract": option.state,
     }
 

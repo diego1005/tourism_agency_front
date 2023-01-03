@@ -21,8 +21,6 @@ export const useSubmitHandler = () => {
 
         if (viewHandlers[name]) viewHandlers[name](data);
 
-        // if (name === "login-form") loginHandler(data);
-        // if (name === "student-form") registerHandler(data);
     }
 
     return {

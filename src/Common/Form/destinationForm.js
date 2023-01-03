@@ -10,7 +10,7 @@ export const destinationFormFields = [
     {
         icon: <i className="fa-solid fa-location-pin"></i>,
         type: "text",
-        name: "name",
+        name: "destination",
         pHolder: "Destino",
     },
     {
@@ -20,3 +20,7 @@ export const destinationFormFields = [
         pHolder: "Detalle",
     },
 ]
+
+export const role = {
+    id_role: 1,
+}

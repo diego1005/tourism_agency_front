@@ -39,13 +39,13 @@ export const getDestinations = async () => {
 
 //SEND
 //individual contracts
-export const addindividualContract = async (body) => {
+export const addIndividualContract = async (body) => {
     const data = await sendByApi("contract", "individual/add", undefined, "POST", body);
     return data;
 }
 
 //general contracts
-export const addgeneralContract = async (body) => {
+export const addGeneralContract = async (body) => {
     const data = await sendByApi("contract", "general/add", undefined, "POST", body);
     return data;
 }

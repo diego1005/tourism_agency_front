@@ -84,3 +84,7 @@ export const generalFormFields = [
         options: {},
     },
 ]
+
+export const role = {
+    id_role: 1,
+}
