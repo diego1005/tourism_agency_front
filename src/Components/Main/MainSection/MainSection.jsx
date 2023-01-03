@@ -7,6 +7,7 @@ import NewStudent from '../../../Pages/NewStudent/NewStudent';
 import NewContract from '../../../Pages/NewContract/NewContract';
 import ListData from '../../../Pages/ListData/ListData';
 import { studentListData, individualListData, generalListData } from '../../../Common/List';
+import NewDestination from '../../../Pages/NewDestination/NewDestination';
 
 export default function MainSection() {
 
@@ -28,7 +29,8 @@ export default function MainSection() {
     "general": <NewContract />,
     "studentsList": <ListData listData={studentListData} />,
     "individualList": <ListData listData={individualListData} />,
-    "generalList": <ListData listData={generalListData} />
+    "generalList": <ListData listData={generalListData} />,
+    "destinations": <NewDestination />,
   }
 
   const switchViews = () => {

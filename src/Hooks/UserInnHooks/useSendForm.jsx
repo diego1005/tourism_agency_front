@@ -1,6 +1,7 @@
 
 import { useHandleView } from '../ViewHooks/useHandleView';
 import { addUser, login } from '../../Services/userServices';
+import { addDestination } from '../../Services/contractServices';
 
 export const useSendForm = () => {
 
@@ -16,7 +17,7 @@ export const useSendForm = () => {
         //TODO ----------------------------------------------
         const response = await addUser(data);
         if (response.status === "success") handleView(null, "dashboard");
-        else alert(response.status);
+        else console.log("error");/*alert(response.status)*/;
     }
 
     const loginHandler = async (data) => {
@@ -27,8 +28,14 @@ export const useSendForm = () => {
         }
     }
 
+    const destinationHandler = async (data) => {
+        const response = await addDestination(data);
+        if (response.status === "success") handleView(null, "dashboard");
+    }
+
     return {
         loginHandler,
         registerHandler,
+        destinationHandler,
     }
 }

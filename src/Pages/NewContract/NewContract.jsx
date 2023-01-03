@@ -34,6 +34,8 @@ export default function NewContract() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [view, contractFields]);
 
+  console.log(formFields);
+
 
   return (
     <div className='new-contract-form-container'>

@@ -1,4 +1,4 @@
-import { getByApi } from '../Common/Api/api';
+import { getByApi, sendByApi } from '../Common/Api/api';
 
 //GET
 //individual contracts state
@@ -34,5 +34,24 @@ export const getPaymentMethods = async () => {
 //travel destinations
 export const getDestinations = async () => {
     const data = await getByApi("common", "destination");
+    return data;
+}
+
+//SEND
+//individual contracts
+export const addindividualContract = async (body) => {
+    const data = await sendByApi("contract", "individual/add", undefined, "POST", body);
+    return data;
+}
+
+//general contracts
+export const addgeneralContract = async (body) => {
+    const data = await sendByApi("contract", "general/add", undefined, "POST", body);
+    return data;
+}
+
+//travel destinations
+export const addDestination = async (body) => {
+    const data = await sendByApi("common", "destination/add", undefined, "POST", body);
     return data;
 }
