@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import './EditData.css';
 import { editFormData, role } from '../../Common/Form/editFormData';
 import { formButton } from '../../Common/Form/formData';
@@ -6,12 +7,6 @@ import Form from '../../Components/Form/Form';
 import { useSetters } from '../../Hooks/Setters/useSetters';
 
 function EditData() {
-
-    const { editData } = useSetters();
-
-    console.log(editData);
-
-    // const { formFields } = editData;
 
     const { editFormName, classIcon, caption } = editFormData;
 

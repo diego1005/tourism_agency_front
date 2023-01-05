@@ -3,21 +3,20 @@ import { ViewContext } from "../../Context/context";
 
 export const useSetters = () => {
 
-    const [editData, setEditData] = useState([]);
+    const [editData, setEdtData] = useState([]);
 
     const { setView } = useContext(ViewContext);
 
     const handleEdit = (data) => {
-        console.log(data);
-        setEditData(data);
-        setView("edit-form");
+        setEdtData(data);
+        console.log(editData);
+        // setView("edit-form");
     }
-    
+
     const handleDelete = (data) => {
         console.log("handleDelete");
     }
 
-    
     return {
         editData,
         handleEdit,
