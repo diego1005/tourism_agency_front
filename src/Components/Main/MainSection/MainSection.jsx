@@ -8,6 +8,7 @@ import NewContract from '../../../Pages/NewContract/NewContract';
 import ListData from '../../../Pages/ListData/ListData';
 import { studentListData, individualListData, generalListData } from '../../../Common/List';
 import NewDestination from '../../../Pages/NewDestination/NewDestination';
+import EditData from '../../../Pages/EditData/EditData';
 
 export default function MainSection() {
 
@@ -24,13 +25,14 @@ export default function MainSection() {
   console.log(view);
 
   let views = {
-    "newStudent": <NewStudent />,
+    "new-student": <NewStudent />,
     "individual": <NewContract />,
     "general": <NewContract />,
-    "studentsList": <ListData listData={studentListData} />,
-    "individualList": <ListData listData={individualListData} />,
-    "generalList": <ListData listData={generalListData} />,
+    "students-list": <ListData listData={studentListData} />,
+    "individual-list": <ListData listData={individualListData} />,
+    "general-list": <ListData listData={generalListData} />,
     "destinations": <NewDestination />,
+    "edit-form": <EditData />
   }
 
   const switchViews = () => {

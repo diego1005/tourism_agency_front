@@ -1,9 +1,10 @@
 import { createElement } from "react"
 
-function Row({ typeRow, value }) {
+function Row({ tag, value }) {
+
   return (
     createElement(
-      typeRow ? typeRow : "td",
+      tag ? tag : "td",
       {},
       value,
     )

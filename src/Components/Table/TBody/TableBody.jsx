@@ -1,20 +1,25 @@
-import Row from "../Row"
+import Row from "../Row";
+import ActionField from "./ActionField";
 
-function TableBody({ bodyList = [] }) {
+function TableBody({ bodyList }) {
 
   return (
     <tbody className="table-body">
       <tr className="row">
         {
-          bodyList.map((element, idx) =>
-            <Row
-              key={idx}
-              typeRow={element.type}
-              value={element}
-            />)
+          !bodyList
+            ? <td className="no-records">No hay registros</td>
+            : bodyList.map((element, idx) =>
+              (idx > 0) &&
+              <Row
+                key={idx}
+                tag={element.tag}
+                value={element.value}
+              />)
         }
+        <ActionField bodyList={bodyList} />
       </tr>
-    </tbody>
+    </tbody >
   )
 }
 

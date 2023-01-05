@@ -26,9 +26,28 @@
     align-items: center;
 }
 
-.row td, .row th {
+.row td,
+.row th {
     width: 6rem;
     text-align: center;
     word-wrap: break-word;
     padding: 0.2rem;
+}
+
+.no-records {
+    width: 90% !important;
+    padding-top: 2rem !important;
+}
+
+.actions-field i {
+    font-size: 1.1rem;
+    padding: 0 0.5rem;
+}
+
+.fa-trash {
+    color: brown;
+}
+
+.fa-pen-to-square {
+    color: darkcyan;
 }

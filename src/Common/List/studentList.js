@@ -4,38 +4,69 @@ export const studentListData = {
     caption: "Buscar Estudiante",
     headList: [
         {
-            "type": "th",
+            "tag": "th",
             "value": "DNI",
         },
         {
-            "type": "th",
+            "tag": "th",
             "value": "Nombre",
         },
         {
-            "type": "th",
+            "tag": "th",
             "value": "Apellido",
         },
         {
-            "type": "th",
+            "tag": "th",
             "value": "Email",
         },
         {
-            "type": "th",
+            "tag": "th",
             "value": "Fecha de Nacimiento",
         },
         {
-            "type": "th",
+            "tag": "th",
             "value": "Telefono",
+        },
+        {
+            "tag": "th",
+            "value": "Acciones",
         },
     ]
 }
 
 export const studentBodyList = (bodyList) => {
-    return [bodyList[0].dni,
-    bodyList[0].User.firstname,
-    bodyList[0].User.lastname,
-    bodyList[0].User.email,
-    bodyList[0].birth_date.split("T")[0],
-    bodyList[0].phone,
-    ]
+    if (bodyList.length > 0) {
+        return [
+            {
+                "type": "text",
+                "value": bodyList[0].id,
+            },
+            {
+                "type": "text",
+                "value": bodyList[0].dni,
+            },
+            {
+                "type": "text",
+                "value": bodyList[0].User.firstname,
+            },
+            {
+                "type": "text",
+                "value": bodyList[0].User.lastname,
+            },
+            {
+                "type": "email",
+                "value": bodyList[0].User.email,
+            },
+            {
+                "type": "date",
+                "value": bodyList[0].birth_date.split("T")[0],
+            },
+            {
+                "type": "text",
+                "value": bodyList[0].phone,
+            },
+        ]
+    } else {
+        return false;
+    }
 }
