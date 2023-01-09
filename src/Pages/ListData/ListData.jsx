@@ -4,14 +4,12 @@ import Top from '../../Components/Top/Top';
 import ListContent from '../../Components/BodyList/ListContent';
 import { TableContext } from '../../Context/context';
 import { useGetters } from '../../Hooks/Getters/useGetters';
-import { useSetters } from '../../Hooks/Setters/useSetters';
 
 function ListData({ listData }) {
 
     const [bodyList, setBodyList] = useState();
 
     const { ready, list, getData } = useGetters();
-    const { handleEdit, handleDelete } = useSetters();
 
     const { titleView, classIcon, caption, headList } = listData;
 
@@ -22,7 +20,7 @@ function ListData({ listData }) {
     }, [ready, titleView])
 
     return (
-        <TableContext.Provider value={{ headList, bodyList, handleEdit, handleDelete }}>
+        <TableContext.Provider value={{ headList, bodyList }}>
             <div className='list-data'>
                 <Top classIcon={classIcon} caption={caption} ></Top>
                 <ListContent></ListContent>

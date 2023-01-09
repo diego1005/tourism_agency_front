@@ -25,7 +25,7 @@ export default function Form({ formName, formClass = null, formFields, role, for
                 name={formName}
                 ref={form}
                 className={formClass ? `form ${formClass}` : "form"}
-                onSubmit={e => submitHandler(e, inputData, role)}>
+                onSubmit={e => submitHandler(e, inputData, role, formFields[1].value)}>
                 {
                     formFields.map((field, idx) =>
                         <FormField
@@ -34,6 +34,8 @@ export default function Form({ formName, formClass = null, formFields, role, for
                             icon={field.icon}
                             type={field.type}
                             field={field.name}
+                            formField={field.form_field}
+                            value={field.value || null}
                             pHolder={field.pHolder}
                             label={field.label}
                             options={field.options}

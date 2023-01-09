@@ -27,11 +27,33 @@ export const individualListData = {
 }
 
 export const individualBodyList = (bodyList) => {
-    console.log(bodyList);
-    return [bodyList[0].Contract.nro_contract,
-    bodyList[0].Contract.indicated_date.split("T")[0],
-    bodyList[0].Contract.indicated_value,
-    bodyList[0].payment_method,
-    bodyList[0].StateContract.state,
+    return [
+        {
+            "form-name": "edit-individual",
+        },
+        {
+            "type": "text",
+            "value": bodyList[0].id,
+        },
+        {
+            "type": "text",
+            "value": bodyList[0].Contract.nro_contract,
+        },
+        {
+            "type": "date",
+            "value": bodyList[0].Contract.indicated_date.split("T")[0],
+        },
+        {
+            "type": "text",
+            "value": bodyList[0].Contract.indicated_value,
+        },
+        {
+            "type": "text",
+            "value": bodyList[0].payment_method,
+        },
+        {
+            "type": "text",
+            "value": bodyList[0].StateContract.state,
+        },
     ]
 }

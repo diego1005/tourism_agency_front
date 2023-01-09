@@ -3,10 +3,12 @@ import { useContext } from "react";
 import { FormHandlerContext } from "../../../Context/context";
 import FormOpt from '../FormOpt/FormOpt';
 
-export default function FormField({ tag = "input", icon = null, type = null, field, pHolder = null, label = null, options }) {
+export default function FormField({ tag = "input", icon = null, type = null, field, formField, value, pHolder = null, label = null, options }) {
 
     const [optionList, setOptionList] = useState([]);
     const { inputData, inputHandler } = useContext(FormHandlerContext);
+
+    console.log(formField);
 
     useEffect(() => {
         if (options) {
@@ -30,6 +32,7 @@ export default function FormField({ tag = "input", icon = null, type = null, fie
                     {icon}
                 </div>
                 {
+                    formField !== false &&
                     createElement
                         (
                             tag,
@@ -37,7 +40,7 @@ export default function FormField({ tag = "input", icon = null, type = null, fie
                                 className: "form-field-input",
                                 type: type,
                                 name: field,
-                                placeholder: pHolder,
+                                placeholder: (value === null) ? pHolder : value,
                                 onChange: inputHandler,
                                 value: inputData.name,
                             },

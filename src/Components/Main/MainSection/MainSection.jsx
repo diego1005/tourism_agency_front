@@ -1,7 +1,7 @@
-import { useEffect, useContext } from 'react';
+import { useEffect, useContext, useState } from 'react';
 import Login from '../../../Pages/Login/Login';
 import './MainSection.css';
-import { AppContext, ViewContext } from '../../../Context/context';
+import { AppContext, EditContext, ViewContext } from '../../../Context/context';
 import Dashboard from '../../../Pages/Dashboard/Dashboard';
 import NewStudent from '../../../Pages/NewStudent/NewStudent';
 import NewContract from '../../../Pages/NewContract/NewContract';
@@ -11,6 +11,8 @@ import NewDestination from '../../../Pages/NewDestination/NewDestination';
 import EditData from '../../../Pages/EditData/EditData';
 
 export default function MainSection() {
+
+  const [editData, setEditData] = useState([]);
 
   const { userLogged, userIsLogged } = useContext(AppContext);
   const { view } = useContext(ViewContext);
@@ -32,7 +34,7 @@ export default function MainSection() {
     "individual-list": <ListData listData={individualListData} />,
     "general-list": <ListData listData={generalListData} />,
     "destinations": <NewDestination />,
-    "edit-form": <EditData />
+    "edit-form": <EditData editData={editData} />
   }
 
   const switchViews = () => {
@@ -40,12 +42,14 @@ export default function MainSection() {
   }
 
   return (
-    <div className='main-section'>
-      {
-        !userLogged
-          ? <Login />
-          : switchViews()
-      }
-    </div>
+    <EditContext.Provider value={{ setEditData }}>
+      <div className='main-section'>
+        {
+          !userLogged
+            ? <Login />
+            : switchViews()
+        }
+      </div>
+    </EditContext.Provider>
   )
 }

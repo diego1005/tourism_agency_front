@@ -1,25 +1,31 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { ViewContext } from "../../Context/context";
+import { deleteUser } from "../../Services/userServices";
 
 export const useSetters = () => {
 
-    const [editData, setEdtData] = useState([]);
-
     const { setView } = useContext(ViewContext);
 
+    /*
+    const [editData, setEditData] = useState([]);
+
     const handleEdit = (data) => {
-        setEdtData(data);
-        console.log(editData);
+        setEditData(data);
         // setView("edit-form");
     }
+    */
 
-    const handleDelete = (data) => {
-        console.log("handleDelete");
+    const handleDelete = async (data) => {
+        const id = data[1].value
+        const deleteResponse = await deleteUser(id);
+        if (deleteResponse.status === "success") setView("dashboard");
+
     }
 
+
     return {
-        editData,
-        handleEdit,
+        // editData,
+        // handleEdit,
         handleDelete,
     }
 }

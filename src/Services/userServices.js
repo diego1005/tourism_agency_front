@@ -5,6 +5,17 @@ export const addUser = async (body) => {
     return data;
 }
 
+export const editUser = async (body) => {
+    const { id } = body;
+    const data = await sendByApi("user", "edit", id, "PUT", body);
+    return data;
+}
+
+export const deleteUser = async ({ id }) => {
+    const data = await sendByApi("user", "delete", id, "DELETE", undefined);
+    return data;
+}
+
 export const login = async (body) => {
     const data = await sendByApi("auth", "login", undefined, "POST", body);
     return data;

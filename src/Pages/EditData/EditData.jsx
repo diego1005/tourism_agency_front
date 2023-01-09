@@ -1,24 +1,23 @@
-import { useEffect } from 'react';
 import './EditData.css';
 import { editFormData, role } from '../../Common/Form/editFormData';
 import { formButton } from '../../Common/Form/formData';
 import Top from '../../Components/Top/Top';
 import Form from '../../Components/Form/Form';
-import { useSetters } from '../../Hooks/Setters/useSetters';
 
-function EditData() {
+function EditData({ editData }) {
 
-    const { editFormName, classIcon, caption } = editFormData;
+    const { classIcon, caption } = editFormData;
+    const editFormName = editData[0].form_name;
 
     return (
         <div className='edit-data-form-container'>
             <Top classIcon={classIcon} caption={caption} />
-            {/* <Form
+            <Form
                 formName={editFormName}
-                formFields={formFields}
+                formFields={editData}
                 formButton={formButton}
                 role={role}
-            /> */}
+            />
         </div>
     )
 }

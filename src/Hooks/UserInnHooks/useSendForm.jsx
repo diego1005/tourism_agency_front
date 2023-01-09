@@ -1,6 +1,6 @@
 
 import { useHandleView } from '../ViewHooks/useHandleView';
-import { addUser, login } from '../../Services/userServices';
+import { addUser, editUser, login } from '../../Services/userServices';
 import { addDestination } from '../../Services/contractServices';
 
 export const useSendForm = () => {
@@ -33,9 +33,25 @@ export const useSendForm = () => {
         if (response.status === "success") handleView(null, "dashboard");
     }
 
+    const editStudentFormHandler = async (data) => {
+        const response = await editUser(data);
+        if (response.status === "success") handleView(null, "students-list");
+    }
+    const editIndividualFormHandler = async (data) => {
+        // const response = await addDestination(data);
+        console.log(data);
+    }
+    const editGeneralFormHandler = async (data) => {
+        // const response = await addDestination(data);
+        console.log(data);
+    }
+
     return {
         loginHandler,
         registerHandler,
         destinationHandler,
+        editStudentFormHandler,
+        editIndividualFormHandler,
+        editGeneralFormHandler,
     }
 }

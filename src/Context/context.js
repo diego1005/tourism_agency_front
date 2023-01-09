@@ -4,8 +4,8 @@ export const AppContext = createContext();
 
 export const ViewContext = createContext();
 
-export const FormHandlerContext = createContext();
+export const EditContext = createContext();
 
-export const FormContext = createContext();
+export const FormHandlerContext = createContext();
 
 export const TableContext = createContext();
