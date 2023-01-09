@@ -8,8 +8,6 @@ export default function FormField({ tag = "input", icon = null, type = null, fie
     const [optionList, setOptionList] = useState([]);
     const { inputData, inputHandler } = useContext(FormHandlerContext);
 
-    console.log(formField);
-
     useEffect(() => {
         if (options) {
             const optSel = <option key={"select"} >--Seleccionar--</option>;

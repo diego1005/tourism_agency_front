@@ -49,6 +49,12 @@ export const studentBodyList = (bodyList) => {
             },
             {
                 "type": "text",
+                "name": "id_user",
+                "value": bodyList[0].User.id,
+                "form_field": false,
+            },
+            {
+                "type": "text",
                 "label": "Dni:",
                 "name": "dni",
                 "icon": <i className="fa-solid fa-id-card"></i>,

@@ -20,13 +20,16 @@ export const useSubmitHandler = () => {
     }
 
     //Fn for handle submit form action
-    const submitHandler = (e, data, { id_role }, id) => {
+    const submitHandler = (e, data, { id_role }, bodyData) => {
         //Prevent default behaviour
         e.preventDefault();
 
         const { name } = e.target;
 
-        data = { ...data, id_role, id }
+        const id = bodyData[1]?.value || undefined;
+        const id_user = bodyData[2]?.value || undefined;
+        data = { ...data, id_role, id, id_user }
+
 
         if (viewHandlers[name]) viewHandlers[name](data);
 

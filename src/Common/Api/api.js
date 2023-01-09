@@ -18,7 +18,7 @@ export const getByApi = (entity, fn, params, role) => {
 export const sendByApi = (entity, fn, params, method, body) => {
     let fullUrl = '';
     if (fn) fullUrl = params ? `${url + entity}/${fn}/${params}` : `${url + entity}/${fn}`;
-    else fullUrl = `${url + entity}`
+    else fullUrl = params ? `${url + entity}/${params}` : `${url + entity}`
     return fetch(fullUrl, {
         method,
         headers: {

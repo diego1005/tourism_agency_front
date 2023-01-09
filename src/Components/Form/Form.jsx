@@ -6,7 +6,7 @@ import { FormHandlerContext, ViewContext } from '../../Context/context';
 import { useInputHandler } from '../../Hooks/FormHooks/useInputHandler';
 import { useSubmitHandler } from '../../Hooks/UserInnHooks/useSubmitHandler';
 
-export default function Form({ formName, formClass = null, formFields, role, formButton }) {
+export default function Form({ formName, formClass = null, formFields = null, role, formButton }) {
 
     const { submitHandler } = useSubmitHandler();
     const { inputData, inputHandler } = useInputHandler();
@@ -25,7 +25,7 @@ export default function Form({ formName, formClass = null, formFields, role, for
                 name={formName}
                 ref={form}
                 className={formClass ? `form ${formClass}` : "form"}
-                onSubmit={e => submitHandler(e, inputData, role, formFields[1].value)}>
+                onSubmit={e => submitHandler(e, inputData, role, formFields)}>
                 {
                     formFields.map((field, idx) =>
                         <FormField

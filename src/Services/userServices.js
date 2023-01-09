@@ -11,8 +11,8 @@ export const editUser = async (body) => {
     return data;
 }
 
-export const deleteUser = async ({ id }) => {
-    const data = await sendByApi("user", "delete", id, "DELETE", undefined);
+export const deleteUser = async (id, body) => {
+    const data = await sendByApi("user", undefined, id, "DELETE", body);
     return data;
 }
 

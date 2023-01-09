@@ -10,14 +10,17 @@ function TableBody({ bodyList }) {
           !bodyList
             ? <td className="no-records">No hay registros</td>
             : bodyList.map((element, idx) =>
-              (idx > 1) &&
+              (idx > 2) &&
               <Row
                 key={idx}
                 tag={element.tag}
                 value={element.value}
               />)
         }
-        <ActionField bodyList={bodyList} />
+        {
+          bodyList &&
+          <ActionField bodyList={bodyList} />
+        }
       </tr>
     </tbody >
   )
