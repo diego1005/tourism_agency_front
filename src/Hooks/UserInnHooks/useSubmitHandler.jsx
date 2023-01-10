@@ -29,8 +29,7 @@ export const useSubmitHandler = () => {
         const id = bodyData[1]?.value || undefined;
         const id_user = bodyData[2]?.value || undefined;
         data = { ...data, id_role, id, id_user }
-
-
+        
         if (viewHandlers[name]) viewHandlers[name](data);
 
     }

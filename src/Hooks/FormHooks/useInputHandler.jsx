@@ -6,7 +6,7 @@ export const useInputHandler = () => {
 
     const inputHandler = ({ target }) => {
         const { name, value } = target;
-
+        
         setInputData({
             ...inputData,
             [name]: value

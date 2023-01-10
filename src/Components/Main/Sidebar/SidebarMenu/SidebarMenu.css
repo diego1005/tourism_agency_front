@@ -12,4 +12,9 @@
 .sidebar-menu em {
     font-family: 'Courier New', Courier, monospace;
     font-size: 0.9rem;
+    color: lightcyan;
+}
+
+.fa-right-to-bracket {
+    color: lightcyan;
 }
