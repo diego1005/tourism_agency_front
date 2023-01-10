@@ -6,6 +6,7 @@ import { contractFormData, contractFormFields, role } from '../../Common/Form/co
 import { formButton } from '../../Common/Form/formData';
 import { ViewContext } from '../../Context/context';
 import { useContract } from '../../Hooks/ContractHooks/useContract';
+import Separator from '../../Components/Separator/Separator';
 
 export default function NewContract() {
 
@@ -18,6 +19,7 @@ export default function NewContract() {
 
   const { contractFormName } = contractFormData;
   const classIcon = "fa-solid fa-file-contract";
+  const styleSeparator = "separator";
 
   useEffect(() => {
     const showContract = async () => {
@@ -37,6 +39,7 @@ export default function NewContract() {
   return (
     <div className='new-contract-form-container'>
       <Top classIcon={classIcon} caption={caption} />
+      <Separator styleSeparator={styleSeparator} />
       <Form
         formName={contractFormName}
         formFields={formFields}

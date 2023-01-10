@@ -1,12 +1,23 @@
 .contact {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     width: 30%;
     height: 100%;
-    border: 1px solid black;
 }
 
 .contact i {
     font-size: 1.5rem;
+}
+
+.fa-whatsapp {
+    color: green;
+}
+
+.fa-facebook {
+    color: blue;
+}
+
+.fa-envelope {
+    color: brown;
 }

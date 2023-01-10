@@ -1,0 +1,13 @@
+.separator {
+    width: 65%;
+    color: lightblue;
+}
+
+.vertical-slash {
+    height: 1.5rem;
+    border-color: lightcyan;
+}
+
+.row-separator {
+    width: 0 !important;
+}

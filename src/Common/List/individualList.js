@@ -27,33 +27,38 @@ export const individualListData = {
 }
 
 export const individualBodyList = (bodyList) => {
-    return [
-        {
-            "form-name": "edit-individual",
-        },
-        {
-            "type": "text",
-            "value": bodyList[0].id,
-        },
-        {
-            "type": "text",
-            "value": bodyList[0].Contract.nro_contract,
-        },
-        {
-            "type": "date",
-            "value": bodyList[0].Contract.indicated_date.split("T")[0],
-        },
-        {
-            "type": "text",
-            "value": bodyList[0].Contract.indicated_value,
-        },
-        {
-            "type": "text",
-            "value": bodyList[0].payment_method,
-        },
-        {
-            "type": "text",
-            "value": bodyList[0].StateContract.state,
-        },
-    ]
+    if (bodyList.length > 0) {
+        return [
+            {
+                "form-name": "edit-individual",
+                "form_field": false,
+            },
+            {
+                "type": "text",
+                "value": bodyList[0].id,
+            },
+            {
+                "type": "text",
+                "value": bodyList[0].Contract.nro_contract,
+            },
+            {
+                "type": "date",
+                "value": bodyList[0].Contract.indicated_date.split("T")[0],
+            },
+            {
+                "type": "text",
+                "value": bodyList[0].Contract.indicated_value,
+            },
+            {
+                "type": "text",
+                "value": bodyList[0].payment_method,
+            },
+            {
+                "type": "text",
+                "value": bodyList[0].StateContract.state,
+            },
+        ]
+    } else {
+        return false;
+    }
 }

@@ -21,7 +21,6 @@ export const useGetters = () => {
             if (titleView === "individual") {
                 const { data: individuals } = await getIndividualContracts(id_role)
                 bodyList = individualBodyList(individuals);
-                console.log(bodyList);
             }
             if (titleView === "general") {
                 const { data: generals } = await getGeneralContracts(id_role)
