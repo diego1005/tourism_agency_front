@@ -15,7 +15,8 @@ function TableBody({ bodyList }) {
                 key={idx}
                 tag={element.tag}
                 value={element.value}
-              />)
+              />
+            )
         }
         {
           bodyList &&

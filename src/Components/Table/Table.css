@@ -18,6 +18,10 @@
     height: 90%;
 }
 
+.table-body tr:hover {
+    background-color: rgba(52,142,237,0.1);
+}
+
 .row {
     display: flex;
     justify-content: space-around;
@@ -49,3 +53,14 @@
 .fa-pen-to-square {
     color: darkcyan;
 }
+
+.btn-edit, .btn-delete {
+    background-color: transparent;
+    cursor: pointer;
+    padding: 0 0.1rem;
+    border: none;
+}
+
+.btn-edit i:hover, .btn-delete i:hover{ 
+    font-size: 1.3rem;
+} 
