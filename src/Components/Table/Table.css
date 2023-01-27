@@ -7,20 +7,11 @@
     height: 90%;
 }
 
-.table-head {
-    width: 100%;
-    height: 10%;
-    background-color: rgba(52,142,237,0.3);
-}
-
 .table-body {
     width: 100%;
     height: 90%;
 }
 
-.table-body tr:hover {
-    background-color: rgba(52,142,237,0.1);
-}
 
 .row {
     display: flex;
@@ -31,11 +22,19 @@
 .row td,
 .row th {
     width: 6rem;
-    text-align: center;
+    text-align: left;
     word-wrap: break-word;
     padding: 0.2rem;
 }
 
+.td-row{
+    border-bottom: 1px solid #42974A;
+    transition: 0.3s;
+}
+.td-row:hover{
+    border-bottom: 1px solid #ffffff;
+    background-color: #F0FCF1;
+}
 .no-records {
     width: 90% !important;
     padding-top: 2rem !important;
@@ -64,3 +63,4 @@
 .btn-edit i:hover, .btn-delete i:hover{ 
     font-size: 1.3rem;
 } 
+

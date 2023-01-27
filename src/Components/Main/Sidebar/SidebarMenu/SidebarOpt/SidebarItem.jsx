@@ -1,10 +1,8 @@
-import './SidebarOpt.css';
+import './SidebarItem.css';
 import { useState } from 'react';
-import SidebarSubOpt from './SidebarSubOpt';
 import { useHandleView } from '../../../../../Hooks/ViewHooks/useHandleView';
 
-export default function SidebarOpt({ icon, opt, subOpt }) {
-
+export default function SidebarItem({ icon, item, children }) {
     const [menu, setMenu] = useState(false);
     const { handleView } = useHandleView();
 
@@ -12,23 +10,21 @@ export default function SidebarOpt({ icon, opt, subOpt }) {
         <div className='sidebar-opt-container'>
             <button className='sidebar-opt-btn'
                 onClick={
-                    subOpt
+                    children
                         ? () => setMenu(preValue => !preValue)
-                        : () => handleView(null, opt)
-                }>
-                <div className="sidebar-opt">
-                    {opt}
-                </div>
+                        : () => handleView(null, item)
+                }
+                >
                 <div className="sidebar-opt-icon">
-                    {icon}
+                    <i className={`fa-solid ${icon}`}></i>
+                </div>
+                <div className="sidebar-opt">
+                    {item}
                 </div>
             </button>
             {
                 menu &&
-                subOpt &&
-                <div className="sidebar-opt-list">
-                    <SidebarSubOpt list={subOpt} />
-                </div>
+                children
             }
         </div>
     )

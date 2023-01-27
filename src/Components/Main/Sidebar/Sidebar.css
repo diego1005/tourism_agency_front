@@ -1,7 +1,49 @@
 .sidebar {
-    width: 25%;
-    height: 100%;
-    margin-left: 1rem;
-    background-color: rgba(50,50,55,255);
-    border-radius: 1rem;
+    width: 300px;
+    height: calc(100vh - 80px);
+    background-color: #F0FCF1;
+    border-radius: 0px 20px 20px 0px;
+    overflow: auto;
+}
+.sidebar-container{
+    align-items: center;
+    width: 100%;
+    height: 90%;
+    justify-content: space-between;
+}
+
+.sidebar-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 10%;
+    background-color: transparent;
+}
+
+.sidebar-title i {
+    font-size: 2rem;
+    color: rgba(248,248,249,255);
+}
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 90%;
+    padding: 0 0.5rem;
+}
+
+.sidebar-menu em {
+    font-size: 0.9rem;
+    color: lightcyan;
+}
+
+.fa-right-to-bracket {
+    color: lightcyan;
+}
+
+.sidebar-opt-list {
+    width: 100%;
 }

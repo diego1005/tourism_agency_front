@@ -14,7 +14,7 @@ export default function Home() {
       <div className='home'>
         <Header />
         <Main />
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </ViewContext.Provider>
   )
