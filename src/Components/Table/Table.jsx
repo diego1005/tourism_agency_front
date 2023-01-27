@@ -16,4 +16,4 @@ function Table({ headList }) {
     )
 }
 
-export default Table
+export default Table;

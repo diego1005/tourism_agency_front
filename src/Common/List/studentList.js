@@ -36,7 +36,6 @@ export const studentListData = {
 
 export const studentBodyList = (bodyList) => {
     if (bodyList.length > 0) {
-
         return bodyList.map(element => {
             return [
                 {
