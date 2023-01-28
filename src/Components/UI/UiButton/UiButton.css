@@ -1,0 +1,26 @@
+.ui-button-container{
+    align-items: center;
+    width: 70%;
+    padding: 0 0.5rem;
+    margin: auto;
+}
+.ui-button{
+    display: flex;
+    align-items: center;
+    width: 180px;
+    color: #000;
+    padding: 5px; 
+    gap: 10px; 
+    font-weight: bold;
+    justify-content: center;
+    background-color: #42974A;
+    border-radius: 3px;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin: auto;
+    transition: 0.3s;
+}
+.ui-button:hover{
+    color: #fff;
+    background-color: 42974A;
+}

@@ -18,7 +18,6 @@ export const useHandleView = () => {
             setView(view);
         }
     }
-
     return {
         handleView,
     }

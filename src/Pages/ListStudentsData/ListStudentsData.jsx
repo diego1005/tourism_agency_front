@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import './ListData.css';
+import './ListStudentsData.css';
 import Top from '../../Components/Top/Top';
 import ListContent from '../../Components/BodyList/ListContent';
 import { TableContext } from '../../Context/context';
@@ -11,7 +11,7 @@ function ListData({ listData }) {
 
     const { ready, list, getData } = useGetters();
 
-    const { titleView, classIcon, caption, headList } = listData;
+    const { titleView, caption, headList } = listData;
 
     useEffect(() => {
         getData(titleView);
@@ -22,7 +22,7 @@ function ListData({ listData }) {
     return (
         <TableContext.Provider value={{ headList, bodyList }}>
             <div className='list-data'>
-                <Top classIcon={classIcon} caption={caption} ></Top>
+                <Top caption={"Listado de estudiantes"} ></Top>
                 <ListContent></ListContent>
             </div>
         </TableContext.Provider>

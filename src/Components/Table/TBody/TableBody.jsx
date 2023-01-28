@@ -1,4 +1,4 @@
-import Row from "../Row";
+import TdRow from "../../UI/TdRow/TdRow";
 import ActionField from "./ActionField";
 
 function TableBody({ bodyList }) {
@@ -9,14 +9,10 @@ function TableBody({ bodyList }) {
       </tr>
     }
     return bodyList.map((elementList) =>{
-      return <tr className="row">
+      return <tr className="row td-row">
           { elementList.map((element, idx) =>{
           return (idx > 2) &&
-            <Row
-              key={idx}
-              tag={element.tag}
-              value={element.value}
-            />
+            <TdRow key={idx} value={element.value}/>
           })
         }
         <ActionField elementList={elementList}/>
@@ -24,26 +20,11 @@ function TableBody({ bodyList }) {
     })
   }
   return (
-    <tbody className="table-body">
-      { render() }
-        {/* {
-          !bodyList
-            ? <td className="no-records">No hay registros</td>
-            : bodyList.map((element, idx) =>
-              (idx > 2) &&
-              <Row
-                key={idx}
-                tag={element.tag}
-                value={element.value}
-              />
-            )
-        }
-        {
-          bodyList &&
-          <ActionField bodyList={bodyList} />
-        } */}
-    </tbody >
+  <tbody className="table-body">
+    { render() }
+  </tbody>
   )
+
 }
 
-export default TableBody
+export default TableBody;
