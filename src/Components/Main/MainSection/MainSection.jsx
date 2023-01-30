@@ -6,6 +6,7 @@ import Dashboard from '../../../Pages/Dashboard/Dashboard';
 import NewStudent from '../../../Pages/NewStudent/NewStudent';
 import NewContract from '../../../Pages/NewContract/NewContract';
 import ListStudentsData from '../../../Pages/ListStudentsData/ListStudentsData';
+import ListPersonalContractData from '../../../Pages/ListPersonalContractData/ListPersonalContractData';
 import { studentListData, individualListData, generalListData } from '../../../Common/List';
 import NewDestination from '../../../Pages/NewDestination/NewDestination';
 import EditData from '../../../Pages/EditData/EditData';
@@ -29,7 +30,7 @@ export default function MainSection() {
     "general": <NewContract />,
     "students-list": <ListStudentsData listData={studentListData} />,
     //agregar nuevas vistas (individual-list, general-list)
-    // "individual-list": <ListData listData={individualListData} />,
+    "individual-list": <ListPersonalContractData listData={individualListData} />,
     // "general-list": <ListData listData={generalListData} />,
     "destinations": <NewDestination />,
     "edit-form": <EditData editData={editData} />
