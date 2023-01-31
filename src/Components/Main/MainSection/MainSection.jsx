@@ -1,11 +1,12 @@
 import { useEffect, useContext, useState } from 'react';
 import Login from '../../../Pages/Login/Login';
 import './MainSection.css';
-import { AppContext, EditContext, ViewContext } from '../../../Context/context';
+import { AppContext, DataContext, ViewContext } from '../../../Context/context';
 import Dashboard from '../../../Pages/Dashboard/Dashboard';
 import NewStudent from '../../../Pages/NewStudent/NewStudent';
 import NewContract from '../../../Pages/NewContract/NewContract';
 import ListStudentsData from '../../../Pages/ListStudentsData/ListStudentsData';
+import StudentDetails from '../../../Pages/StudentDetails/StudentDetails';
 import ListPersonalContractData from '../../../Pages/ListPersonalContractData/ListPersonalContractData';
 import { studentListData, individualListData, generalListData } from '../../../Common/List';
 import NewDestination from '../../../Pages/NewDestination/NewDestination';
@@ -13,6 +14,7 @@ import EditData from '../../../Pages/EditData/EditData';
 
 export default function MainSection() {
 
+  const [details, setDetails] = useState([]);
   const [editData, setEditData] = useState([]);
 
   const { userLogged, userIsLogged } = useContext(AppContext);
@@ -29,6 +31,7 @@ export default function MainSection() {
     "individual": <NewContract />,
     "general": <NewContract />,
     "students-list": <ListStudentsData listData={studentListData} />,
+    "student-details": <StudentDetails details={details} />,
     //agregar nuevas vistas (individual-list, general-list)
     "individual-list": <ListPersonalContractData listData={individualListData} />,
     // "general-list": <ListData listData={generalListData} />,
@@ -41,7 +44,7 @@ export default function MainSection() {
   }
 
   return (
-    <EditContext.Provider value={{ setEditData }}>
+    <DataContext.Provider value={{ setDetails, setEditData }}>
       <div className='main-section'>
         {
           !userLogged
@@ -49,6 +52,6 @@ export default function MainSection() {
             : switchViews()
         }
       </div>
-    </EditContext.Provider>
+    </DataContext.Provider>
   )
 }
