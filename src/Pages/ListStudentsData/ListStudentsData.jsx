@@ -9,12 +9,12 @@ function ListStudentsData({ listData }) {
 
     const [bodyList, setBodyList] = useState();
 
-    const { ready, list, getData } = useGetters();
+    const { ready, list, getDataForList } = useGetters();
 
     const { titleView,  headList } = listData;
 
     useEffect(() => {
-        getData(titleView);
+        getDataForList(titleView);
         setBodyList(list);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [ready, titleView])

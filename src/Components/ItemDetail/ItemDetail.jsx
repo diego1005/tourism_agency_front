@@ -1,9 +1,10 @@
 
-
-
-export const itemDetail = () => {
-
+function ItemDetail({ details }) {
     return (
-        <div>este es el item detail</div>
+        <div className="info-container">
+
+        </div>
     )
-};
+}
+
+export default ItemDetail

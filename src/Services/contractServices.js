@@ -11,6 +11,10 @@ export const getIndividualContracts = async (role) => {
     const data = await getByApi("contract", "individual/list", undefined, role);
     return data;
 }
+export const getIndividualContractByDni = async (dni) => {
+    const data = await getByApi("contract", "individual", dni);
+    return data;
+}
 //general contracts state
 export const getGenStates = async (role) => {
     const data = await getByApi("contract", "general/state/list", undefined, role);

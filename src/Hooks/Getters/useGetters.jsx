@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { AppContext } from "../../Context/context";
 import { studentBodyList, individualBodyList, generalBodyList } from '../../Common/List/';
-import { getIndividualContracts, getGeneralContracts, getStudents } from '../../Services/contractServices';
+import { getIndividualContractByDni, getIndividualContracts, getGeneralContracts, getStudents } from '../../Services/contractServices';
 
 export const useGetters = () => {
 
@@ -11,7 +11,7 @@ export const useGetters = () => {
     const { userLogged } = useContext(AppContext);
     const { id_role } = userLogged;
 
-    const getData = async (titleView) => {
+    const getDataForList = async (titleView) => {
         try {
             let bodyList = [];
             if (titleView === "students") {
@@ -33,9 +33,22 @@ export const useGetters = () => {
         }
     }
 
+    const getIndividualContract = async (dni) => {
+        try {
+            let bodyList = [];
+            const { data: individual } = await getIndividualContractByDni(dni);
+            bodyList = individualBodyList(individual);
+            setList(bodyList);
+            setReady(true);
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
     return {
         ready,
         list,
-        getData,
+        getDataForList,
+        getIndividualContract,
     }
 }
